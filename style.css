@@ -19,9 +19,17 @@ body {
 a { color: var(--brand); }
 .container { width: min(1080px, 92%); margin: 0 auto; }
 .site-header {
-  position: sticky; top: 0; z-index: 10;
-  background: rgba(255,255,255,.9); backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  background: #062b25; /* This matches your lantern background */
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-links a {
+  color: #fdfcf9 !important; /* This turns your menu links cream/white */
+}
+
+.nav-links a.active {
+  border-bottom-color: #d63c2e; /* The red underline from the lantern */
 }
 .nav { display:flex; align-items:center; justify-content:space-between; padding: 12px 0; gap: 20px; }
 .brand { font-weight: 700; text-decoration: none; color: var(--text); }
@@ -44,3 +52,10 @@ a { color: var(--brand); }
 .footer { padding: 28px 0 46px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 18px; }
 .subtle { font-size: .95rem; color: var(--muted); }
 .contact-box { margin-top: 28px; background:#fff; border:1px solid var(--border); border-radius:14px; padding:20px; }
+.card img {
+  width: 100%;
+  height: auto; /* This makes the image scale naturally */
+  display: block;
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+}
