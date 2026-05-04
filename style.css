@@ -59,3 +59,40 @@ a { color: var(--brand); }
   border-radius: 8px 8px 0 0;
   object-fit: cover;
 }
+/* This makes the header the brand green and aligns everything */
+.site-header {
+  background-color: #062b25; 
+  padding: 12px 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* This handles the new Icon and the Text name */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 50px; /* Adjust this if the lantern looks too small */
+  width: auto;
+  margin-right: 12px;
+}
+
+.brand-name {
+  color: #fdfcf9;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* This makes sure your menu links are visible on the green */
+.nav-links a {
+  color: #fdfcf9 !important;
+  margin-left: 20px;
+  text-decoration: none;
+}
