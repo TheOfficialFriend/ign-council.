@@ -1,14 +1,40 @@
-<header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img src="logo-icon.png" alt="Official Friend Icon" class="logo-img"> 
-      <span class="brand-name">Official Friend</span>
-    </a>
-    <nav class="nav-links">
-      <a href="programmes.html">Programmes</a>
-      <a href="off-wellbeing-circle.html">OF.F Wellbeing Circle</a>
-      <a href="yoga-with-kristina.html">Yoga with Kristina</a>
-      <a href="rbkc-chess-community.html">RBKC Chess Community</a>
-    </nav>
-  </div>
-</header>
+<style>
+  /* This is the CSS inside your HTML file */
+  
+  .site-header {
+    background-color: #062b25 !important; /* The brand green */
+    padding: 15px 0;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .brand img {
+    height: 50px;
+    width: auto;
+    margin-right: 12px;
+    /* This fix handles the checkerboard background in image_d3d919.jpg */
+    border-radius: 50%; 
+  }
+
+  .brand-name {
+    color: #fdfcf9;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+  .nav-links a {
+    color: #fdfcf9 !important;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+</style>
