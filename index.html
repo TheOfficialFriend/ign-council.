@@ -1,10 +1,10 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html">
-      <!-- We use the ICON now, not the BANNER -->
-      <img src="logo-icon.png" alt="Official Friend Icon"> 
-      <span>Official Friend</span>
+      <img src="logo-icon.png" alt="Official Friend Icon">
+      <span class="brand-name">Official Friend</span>
     </a>
+
     <nav class="nav-links">
       <a href="programmes.html">Programmes</a>
       <a href="off-wellbeing-circle.html">OF.F Wellbeing Circle</a>
@@ -13,43 +13,77 @@
     </nav>
   </div>
 </header>
+
 <style>
-  /* This is the CSS inside your HTML file */
-  
   .site-header {
-    background-color: #062b25 !important; /* The brand green */
+    background-color: #062b25;
     padding: 15px 0;
+  }
+
+  .container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
   }
 
   .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 24px;
   }
 
   .brand {
     display: flex;
     align-items: center;
     text-decoration: none;
+    flex-shrink: 0;
   }
 
   .brand img {
     height: 50px;
-    width: auto;
+    width: 50px;
+    object-fit: cover;
     margin-right: 12px;
-    /* This fix handles the checkerboard background in image_d3d919.jpg */
-    border-radius: 50%; 
+    border-radius: 50%;
   }
 
   .brand-name {
     color: #fdfcf9;
     font-weight: 700;
     font-size: 1.4rem;
+    letter-spacing: 0.2px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
   .nav-links a {
-    color: #fdfcf9 !important;
-    margin-left: 20px;
+    color: #fdfcf9;
     text-decoration: none;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 760px) {
+    .nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .nav-links {
+      gap: 12px;
+    }
+
+    .nav-links a {
+      margin-left: 0;
+      font-size: 0.95rem;
+    }
   }
 </style>
