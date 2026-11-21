@@ -4,28 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#07110f">
-  <title>The Official Friend | Social Media Management</title>
+  <title>The Official Friend London | This Is Our London</title>
+  <meta name="description" content="Meet the Londoners in The Official Friend’s campaign and the AI-powered creative agency behind it. Brought to you by the power of friendship.">
   <link rel="stylesheet" href="style.css">
   <style>
-    .brand .logo-img{height:54px;width:auto;margin-right:12px;filter:drop-shadow(0 3px 5px rgba(0,0,0,.3));transition:transform 420ms ease,filter 420ms ease}
-    .brand:hover .logo-img,.brand:focus-visible .logo-img{transform:perspective(700px) rotateY(-9deg) rotateX(4deg) translateZ(3px);filter:drop-shadow(4px 6px 8px rgba(0,0,0,.4))}
-    .campaign{position:relative;isolation:isolate;overflow:hidden;margin:34px auto 48px;padding:clamp(34px,7vw,82px);min-height:470px;display:flex;align-items:center;color:#f8f5ec;background:radial-gradient(ellipse at 84% 18%,rgba(214,60,46,.20),transparent 30%),linear-gradient(115deg,#07110f 0%,#10251f 66%,#17382f 100%);border:1px solid rgba(214,60,46,.55);box-shadow:0 24px 70px rgba(10,18,15,.22)}
-    .campaign:after{content:"";position:absolute;z-index:-1;inset:0;background:repeating-linear-gradient(135deg,transparent 0 48px,rgba(255,255,255,.025) 49px 50px);mask-image:linear-gradient(90deg,transparent,black)}
-    .campaign-copy{max-width:760px}
-    .campaign .eyebrow{color:#ff7464;letter-spacing:.18em;font-size:.78rem}
-    .campaign h1{max-width:780px;margin:18px 0 20px;font-size:clamp(2.7rem,8vw,6.8rem);line-height:.91;letter-spacing:-.065em;text-transform:uppercase}
-    .campaign h1 span{color:#ff5546}
-    .campaign p{max-width:610px;color:#d8dfd8;font-size:clamp(1.05rem,2vw,1.25rem)}
-    .campaign .motto{font-weight:700;color:#fff;margin-top:24px}
-    .campaign-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-    .campaign .cta{background:#e13b2e;border:1px solid #ff6c5f;border-radius:3px;padding:13px 20px;color:#fff;text-transform:uppercase;letter-spacing:.06em}
-    .campaign .cta:hover{background:#ff5546}
-    .campaign .secondary{background:transparent;border:1px solid rgba(255,255,255,.45)}
-    .section-label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#b53329;font-weight:800}
-    .grid .card{border-radius:4px;border-top:3px solid #0e5a4f}
-    .site-header{box-shadow:0 4px 24px rgba(0,0,0,.16)}
-    @media(max-width:700px){.campaign{min-height:0;margin-top:20px}.nav{align-items:flex-start;flex-direction:column}.nav-links{gap:10px}.nav-links a{margin-left:0!important}.campaign h1{font-size:clamp(2.5rem,14vw,4.8rem)}}
-    @media(prefers-reduced-motion:reduce){.brand .logo-img{transition:none}}
+    .campaign, .reveal {
+      margin: 32px 0;
+      padding: clamp(24px, 7vw, 76px);
+      color: #f8f5ec;
+      background: linear-gradient(125deg, #07110f, #17382f);
+    }
+    .campaign h1 {
+      margin: 12px 0 20px;
+      font-size: clamp(2.75rem, 8vw, 6.5rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+    .campaign .eyebrow { color: #ffb6aa; }
+    .campaign p, .reveal p, .story > p { max-width: 62ch; }
+    .story { padding: clamp(22px, 5vw, 56px) 0; }
+    .story h2, .reveal h2 {
+      margin: 0 0 16px;
+      max-width: 25ch;
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+    .future .grid { margin-top: 24px; }
+    .future .card { border-top: 3px solid #0e5a4f; }
+    .future h3 { margin-top: 0; }
+    .jumper {
+      padding-inline: clamp(24px, 7vw, 76px);
+      background: #e6f3ef;
+      border-left: 4px solid #0e5a4f;
+    }
+    .reveal { border-top: 4px solid #ff7464; }
+    .reveal .cta {
+      background: #f8f5ec;
+      color: #062b25;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px 12px; }
+    .campaign .cta, .reveal .cta { border-radius: 4px; }
+    .campaign .cta { background: #f8f5ec; color: #062b25; }
+    .campaign-page a:focus-visible, .site-header a:focus-visible {
+      outline: 3px solid #d63c2e;
+      outline-offset: 4px;
+    }
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; align-items: flex-start; }
+      .nav-links a { margin-left: 0; }
+    }
   </style>
 </head>
 <body>
@@ -44,44 +72,48 @@
     </nav>
   </div>
 </header>
-<main class="container">
-  <section class="campaign">
-    <div class="campaign-copy">
-      <p class="eyebrow">Social media management · The Official Friend</p>
-      <h1>Make your<br><span>presence</span><br>impossible to ignore.</h1>
-      <p>A social media management campaign from The Official Friend—built around a simple idea: connection gets people moving.</p>
-      <p class="motto">Brought to you by the power of friendship.</p>
-      <div class="campaign-actions">
-        <a class="cta" href="mailto:OfficialfriendforLondon@proton.me?subject=Social%20media%20management">Start a conversation</a>
-        <a class="cta secondary" href="programmes.html">Explore the work</a>
-      </div>
+<main class="container campaign-page">
+  <section class="campaign" aria-labelledby="campaign-title">
+    <p class="eyebrow">The Official Friend London</p>
+    <h1 id="campaign-title">This is our London.</h1>
+    <p>We’re neighbours, shopkeepers, chess players and people with an idea and a friend willing to help. Some of us grew up on these streets. Some of us are still learning the bus routes.</p>
+    <p>One of us pulled up a chair. The rest of us made room.</p>
+    <a class="cta" href="#our-london">See the London we built</a>
+  </section>
+
+  <section class="story future" id="our-london" aria-labelledby="future-title">
+    <h2 id="future-title">By the next Saturday, they’d saved you a seat.</h2>
+    <p>Picture a Saturday in the London we built together. You came for one game of chess. By the time the board was packed away, you’d met the neighbour who could help with that idea you’d been sitting on. A week later, you walked in and someone called you by name.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>The chess table filled up.</h3>
+        <p>The people who came on their own started showing newcomers where the spare pieces were.</p>
+      </article>
+      <article class="card">
+        <h3>The shop became a meeting place.</h3>
+        <p>A local maker put their first run in the window. A neighbour brought a friend in to see it.</p>
+      </article>
+      <article class="card">
+        <h3>The idea left the group chat.</h3>
+        <p>One friend found a room, another made the poster, and on Friday people turned up.</p>
+      </article>
     </div>
   </section>
-  <p class="section-label">The network behind the campaign</p>
-  <section class="grid">
-    <article class="card">
-      <h2>Our Mission</h2>
-      <p>The Official Friend is dedicated to reducing isolation by creating spaces where residents can connect through shared activities, learning, and mutual support.</p>
-      <a href="programmes.html" class="cta">View Our Programmes</a>
-    </article>
-    <article class="card">
-      <h2>The Wellbeing Circle</h2>
-      <p>Specifically designed for RBKC residents, our Wellbeing Circle brings together movement and mental focus through Yoga and Chess.</p>
-      <a href="off-wellbeing-circle.html" class="cta">Explore the Circle</a>
-    </article>
+
+  <section class="story jumper" aria-labelledby="jumper-title">
+    <h2 id="jumper-title">Marketing Genius or Evil Scientist?</h2>
+    <p>That’s the question on the jumper. Wear it and see who asks. Tell them about someone in London they ought to meet.</p>
+    <p>The Official Friend is an AI-powered creative agency. We use AI to explore campaign ideas and develop content for independent businesses and creators. This campaign puts our own work to the test. Can a line on a jumper get two people talking?</p>
+    <p><strong>Brought to you by the power of friendship.</strong></p>
   </section>
-  <section class="section">
-    <div class="grid">
-      <article class="card" style="text-align:center">
-        <h2>Join the community</h2>
-        <p>Connect with OFF 4 London on Telegram—our open community space for residents across London.</p>
-        <a class="cta" href="https://t.me/OFF4LONDON" target="_blank" rel="noopener noreferrer">@OFF4LONDON on Telegram</a>
-      </article>
-      <article class="card" style="text-align:center">
-        <h2>Get in touch</h2>
-        <p>For enquiries, partnerships, or anything else—email us directly.</p>
-        <a class="cta" href="mailto:OfficialfriendforLondon@proton.me">OfficialfriendforLondon@proton.me</a>
-      </article>
+
+  <section class="reveal" aria-labelledby="reveal-title">
+    <h2 id="reveal-title">Then the room went quiet.</h2>
+    <p>The room closed. The shop window went dark. The people who used to say “see you next Saturday” stopped seeing each other. That’s how isolation takes hold. A place to meet disappears, and with it go the small chances to become part of someone’s week.</p>
+    <div class="actions">
+      <a class="cta" href="programmes.html">Find a programme</a>
+      <a class="cta" href="https://t.me/OFF4LONDON">Join OFF4LONDON on Telegram</a>
+      <a class="cta" href="mailto:OfficialfriendforLondon@proton.me?subject=Creative%20project%20enquiry">Talk to us about a project</a>
     </div>
   </section>
 </main>
