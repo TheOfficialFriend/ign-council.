@@ -3,15 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Official Friend | Home</title>
+  <title>The Official Friend | Home</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .brand .logo-img {
+      height: 54px;
+      width: auto;
+      margin-right: 12px;
+      transform: perspective(700px) rotateX(0) rotateY(0);
+      transform-style: preserve-3d;
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,.18));
+      transition: transform 420ms ease, filter 420ms ease;
+    }
+    .brand:hover .logo-img,
+    .brand:focus-visible .logo-img {
+      transform: perspective(700px) rotateY(-9deg) rotateX(4deg) translateZ(3px);
+      filter: drop-shadow(4px 6px 8px rgba(0,0,0,.28));
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .brand .logo-img { transition: none; }
+    }
+  </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="index.html">
-      <img src="lantern-logo.png" alt="Official Friend" style="height: 80px; width: auto;">
+    <a class="brand" href="index.html" aria-label="The Official Friend home">
+      <img class="logo-img" src="lantern-logo.png" alt="">
+      <span class="brand-name">The Official Friend</span>
     </a>
     <nav class="nav-links">
       <a href="programmes.html">Programmes</a>
@@ -26,13 +46,13 @@
 <main class="container">
 
   <section class="hero">
-    <p class="eyebrow">Welcome to the Official Friend Network</p>
+    <p class="eyebrow">Welcome to The Official Friend Network</p>
   </section>
 
   <section class="grid">
     <article class="card">
       <h2>Our Mission</h2>
-      <p>Official Friend is dedicated to reducing isolation by creating spaces where residents can connect through shared activities, learning, and mutual support.</p>
+      <p>The Official Friend is dedicated to reducing isolation by creating spaces where residents can connect through shared activities, learning, and mutual support.</p>
       <a href="programmes.html" class="cta">View Our Programmes</a>
     </article>
 
@@ -49,7 +69,7 @@
       <article class="card" style="text-align: center;">
         <h2>Join the community</h2>
         <p>Connect with OFF 4 London on Telegram — our open community space for residents across London.</p>
-        <a class="cta" href="https://t.me/OFF4LONDON" target="_blank">@OFF4LONDON on Telegram</a>
+        <a class="cta" href="https://t.me/OFF4LONDON" target="_blank"> @OFF4LONDON on Telegram</a>
       </article>
 
       <article class="card" style="text-align: center;">
@@ -64,7 +84,7 @@
 </main>
 
 <footer class="footer">
-  <div class="container">Official Friend &copy; 2026</div>
+  <div class="container">The Official Friend &copy; 2026</div>
 </footer>
 
 </body>
