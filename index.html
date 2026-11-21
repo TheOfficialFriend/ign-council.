@@ -1,192 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0F2A22">
-  <title>The Official Friend London | This Is Our London</title>
-  <meta name="description" content="Meet the Londoners in The Official Friend’s campaign and the AI-powered creative agency behind it. Brought to you by the power of friendship.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&amp;display=swap">
-  <style>
-    .campaign-site {
-      --forest: #0f2a22;
-      --panel: #16382e;
-      --cream: #fff4dc;
-      --mist: #d9e4dc;
-      --gold: #f2c14e;
-      --red: #b9281e;
-      background: var(--forest);
-      color: var(--cream);
-      font-family: system-ui, sans-serif;
-    }
-    .campaign-site .container { width: min(1072px, calc(100% - 48px)); }
-    .campaign-site .site-header { background: var(--forest); border: 0; }
-    .campaign-site .nav { padding: 16px 0; }
-    .campaign-site .brand-name {
-      color: var(--gold);
-      font-size: .875rem;
-      letter-spacing: .19em;
-      text-transform: uppercase;
-    }
-    .campaign-site .nav-links a {
-      margin-left: 0;
-      font-size: .9375rem;
-    }
-    .campaign-site a:hover { text-decoration: underline; }
-    .campaign-site a:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
-    .campaign-page {
-      display: grid;
-      gap: clamp(52px, 8vw, 88px);
-      padding-block: clamp(40px, 7vw, 76px) 48px;
-    }
-    .campaign-page h1, .campaign-page h2, .campaign-page h3, .jumper-print {
-      font-family: Newsreader, Georgia, serif;
-      font-weight: 600;
-      line-height: 1.05;
-      margin: 0;
-    }
-    .campaign-page h1 { font-size: clamp(3.25rem, 8vw, 5.5rem); }
-    .campaign-page h2 { font-size: clamp(2.25rem, 5vw, 3.25rem); }
-    .campaign-page h3 { font-size: 1.625rem; }
-    .campaign-page p { max-width: 65ch; color: var(--mist); margin: 16px 0 0; }
-    .campaign-page .campaign p, .reveal p { font-size: 1.125rem; }
-    .campaign, .jumper {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-items: center;
-      gap: clamp(24px, 5vw, 48px);
-    }
-    .future .grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 28px;
-    }
-    .future .card {
-      padding: 24px;
-      background: var(--panel);
-      border: 0;
-      border-radius: 14px;
-      box-shadow: none;
-    }
-    .jumper .motto { color: var(--gold); }
-    .jumper-print {
-      display: grid;
-      place-content: center;
-      min-height: 300px;
-      margin: 0;
-      padding: 36px 24px;
-      border-radius: 20px;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      font-size: clamp(2rem, 4vw, 2.75rem);
-    }
-    .jumper-print figcaption {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px 18px;
-      margin-top: 22px;
-      font: 500 .9375rem/1.45 system-ui, sans-serif;
-    }
-    .reveal {
-      padding: clamp(24px, 5vw, 48px);
-      border-radius: 20px;
-      background: var(--gold);
-      color: var(--forest);
-    }
-    .reveal p { color: inherit; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-    .campaign-page .cta {
-      display: inline-flex;
-      align-items: center;
-      min-height: 48px;
-      margin: 0;
-      padding: 10px 20px;
-      border: 2px solid transparent;
-      border-radius: 10px;
-      background: var(--red);
-      color: var(--cream);
-    }
-    .campaign .cta { margin-top: 24px; }
-    .reveal .cta.secondary { border-color: currentColor; background: transparent; color: var(--forest); }
-    .reveal a:focus-visible { outline-color: var(--forest); }
-    .campaign-site .footer { border: 0; margin: 0; padding: 0 0 40px; color: var(--mist); }
-    .campaign-site .footer .container { border-top: 2px solid #d42e22; padding-top: 20px; }
-    @media (max-width: 740px) {
-      .campaign-site .nav { align-items: flex-start; flex-direction: column; }
-      .campaign, .jumper, .future .grid { grid-template-columns: minmax(0, 1fr); }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0F2A22">
+<title>Marketing Genius or Evil Scientist</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&amp;display=swap">
+<style>
+  body { margin: 0; background: #0f2a22; }
+  a:focus-visible { outline: 3px solid #f2c14e; outline-offset: 4px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .action { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 2px solid; border-radius: 10px; color: #0f2a22; font-weight: 650; }
+  .action:focus-visible { outline-color: #0f2a22; }
+</style>
 </head>
-<body class="campaign-site">
-<header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="index.html" aria-label="The Official Friend home">
-      <img class="logo-img" src="lantern-logo.png" alt="">
-      <span class="brand-name">The Official Friend</span>
-    </a>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="programmes.html">Programmes</a>
-      <a href="off-wellbeing-circle.html">OF.F Wellbeing Circle</a>
-      <a href="yoga-with-kristina.html">Yoga with Kristina</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-<main class="container campaign-page">
-  <section class="campaign" aria-labelledby="campaign-title">
-    <h1 id="campaign-title">This is our London.</h1>
-    <div>
-      <p>We’re neighbours, shopkeepers, makers and people with an idea and a friend willing to help. Some of us grew up on these streets. Some of us are still learning the bus routes.</p>
-      <p>One of us pulled up a chair. The rest of us made room.</p>
-      <a class="cta" href="#our-london">See the London we built</a>
+<body>
+<div style="background:#0F2A22;color:#FFF4DC;font-family:system-ui,sans-serif;box-sizing:border-box;display:flex;flex-direction:column;align-items:center">
+<div style="width:100%;max-width:1120px;box-sizing:border-box;padding:0 24px;display:flex;flex-direction:column;gap:88px;padding-bottom:64px">
+<header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><div style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E">OFFICIAL FRIEND</div><a href="contact.html" style="color:#FFF4DC;font-weight:600;font-size:15px">Contact</a></header>
+<main style="display:grid;gap:clamp(52px,8vw,88px)">
+<section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:22px"><h1 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:clamp(2.75rem,6vw,4rem);line-height:1.05">This is our London.</h1><p style="margin:0;font-size:19px;line-height:1.5;color:#D9E4DC;max-width:480px">We’re neighbours, shopkeepers, makers and people with an idea and a friend willing to help. Some of us grew up on these streets. Some of us are still learning the bus routes.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#how" style="background:#B9281E;color:#FFF4DC;font-weight:600;font-size:16px;padding:14px 26px;border-radius:10px;text-decoration:none;min-height:20px">See the London we built</a></div></div>
+<blockquote style="margin:0;background:#16382E;border-radius:20px;padding:clamp(24px,5vw,48px);font:600 clamp(1.875rem,4vw,2.75rem)/1.15 Newsreader,Georgia,serif">One of us pulled up a chair. The rest of us made room.</blockquote>
+</section>
+<section id="how" style="display:flex;flex-direction:column;gap:28px"><h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:40px">By the next Saturday, they’d saved you a seat.</h2><p style="margin:0;max-width:65ch;color:#D9E4DC">Picture a Saturday in the London we built together. You stopped in for a coffee. Before you’d finished your cup, you’d met the neighbour who could help with that idea you’d been sitting on. A week later, you walked in and someone called you by name.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px"><div style="background:#16382E;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:24px;color:#FFF4DC">The table filled up.</h3><p style="margin:0;font-family:system-ui,sans-serif;font-size:16px;line-height:1.5;color:#D9E4DC">The people who came on their own started pulling up chairs for newcomers.</p></div><div style="background:#16382E;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:24px;color:#FFF4DC">The shop became a meeting place.</h3><p style="margin:0;font-family:system-ui,sans-serif;font-size:16px;line-height:1.5;color:#D9E4DC">A local maker put their first run in the window. A neighbour brought a friend in to see it.</p></div><div style="background:#16382E;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px"><h3 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:24px;color:#FFF4DC">The idea left the group chat.</h3><p style="margin:0;font-family:system-ui,sans-serif;font-size:16px;line-height:1.5;color:#D9E4DC">One friend found a room, another made the poster, and on Friday people turned up.</p></div></div></section>
+<section id="jumper" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:22px"><h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:clamp(2.75rem,6vw,4rem);line-height:1.05">Marketing Genius or Evil Scientist?</h2><p style="margin:0;font-size:19px;line-height:1.5;color:#D9E4DC;max-width:480px">That’s the question on the jumper. Wear it and see who asks. Tell them about someone in London they ought to meet.</p><p style="margin:0;color:#D9E4DC">The Official Friend is an AI-powered creative agency. We use AI to explore campaign ideas and develop content for independent businesses and creators. This campaign puts our own work to the test. Can a line on a jumper get two people talking?</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p></div>
+<div style="background:#000;border-radius:20px;padding:48px 32px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center"><div style="font-family:Newsreader,Georgia,serif;font-size:34px;line-height:1.15;color:#fff">Marketing genius<br>or evil scientist.</div><div style="display:flex;gap:18px;font-size:14px;color:#fff"><span>☐ genius</span><span>☐ evil scientist</span><span>☐ both</span></div></div>
+</section>
+<section style="background:#F2C14E;color:#0F2A22;border-radius:20px;padding:clamp(22px,5vw,40px);display:flex;flex-direction:column;gap:16px"><h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:38px;line-height:1.15">Then the room went quiet.</h2><p style="margin:0;font-size:18px;line-height:1.5;max-width:640px">The room closed. The shop window went dark. The people who used to say “see you next Saturday” stopped seeing each other. That’s how isolation takes hold. A place to meet disappears, and with it go the small chances to become part of someone’s week.</p><div class="actions">
+      <a class="action" href="programmes.html">Find a programme</a>
+      <a class="action" href="https://t.me/OFF4LONDON">Join OFF4LONDON on Telegram</a>
+      <a class="action" href="mailto:OfficialfriendforLondon@proton.me?subject=Creative%20project%20enquiry">Talk to us about a project</a>
     </div>
-  </section>
-
-  <section class="story future" id="our-london" aria-labelledby="future-title">
-    <h2 id="future-title">By the next Saturday, they’d saved you a seat.</h2>
-    <p>Picture a Saturday in the London we built together. You stopped in for a coffee. Before you’d finished your cup, you’d met the neighbour who could help with that idea you’d been sitting on. A week later, you walked in and someone called you by name.</p>
-    <div class="grid">
-      <article class="card">
-        <h3>The table filled up.</h3>
-        <p>The people who came on their own started pulling up chairs for newcomers.</p>
-      </article>
-      <article class="card">
-        <h3>The shop became a meeting place.</h3>
-        <p>A local maker put their first run in the window. A neighbour brought a friend in to see it.</p>
-      </article>
-      <article class="card">
-        <h3>The idea left the group chat.</h3>
-        <p>One friend found a room, another made the poster, and on Friday people turned up.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="story jumper" aria-labelledby="jumper-title">
-    <div>
-      <h2 id="jumper-title">Marketing Genius or Evil Scientist?</h2>
-      <p>That’s the question on the jumper. Wear it and see who asks. Tell them about someone in London they ought to meet.</p>
-      <p>The Official Friend is an AI-powered creative agency. We use AI to explore campaign ideas and develop content for independent businesses and creators. This campaign puts our own work to the test. Can a line on a jumper get two people talking?</p>
-      <p class="motto"><strong>Brought to you by the power of friendship.</strong></p>
-    </div>
-    <figure class="jumper-print" aria-label="Jumper lettering concept">
-      <div>Marketing genius<br>or evil scientist.</div>
-      <figcaption><span>☐ genius</span><span>☐ evil scientist</span><span>☐ both</span></figcaption>
-    </figure>
-  </section>
-
-  <section class="reveal" aria-labelledby="reveal-title">
-    <h2 id="reveal-title">Then the room went quiet.</h2>
-    <p>The room closed. The shop window went dark. The people who used to say “see you next Saturday” stopped seeing each other. That’s how isolation takes hold. A place to meet disappears, and with it go the small chances to become part of someone’s week.</p>
-    <div class="actions">
-      <a class="cta" href="programmes.html">Find a programme</a>
-      <a class="cta secondary" href="https://t.me/OFF4LONDON">Join OFF4LONDON on Telegram</a>
-      <a class="cta secondary" href="mailto:OfficialfriendforLondon@proton.me?subject=Creative%20project%20enquiry">Talk to us about a project</a>
-    </div>
-  </section>
+</section>
 </main>
-<footer class="footer"><div class="container">The Official Friend &copy; 2026</div></footer>
+<footer style="border-top:2px solid #D42E22;padding-top:24px;color:#D9E4DC;font-size:14px">The Official Friend &copy; 2026</footer>
+</div>
+</div>
 </body>
 </html>
