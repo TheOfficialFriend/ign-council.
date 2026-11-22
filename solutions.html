@@ -23,8 +23,15 @@
     h2 { font-size: 1.75rem; }
     p { margin: 12px 0 0; color: #d9e4dc; }
     .intro { max-width: 59ch; font-size: 1.125rem; }
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; margin-block: 32px; }
-    article { padding: 24px; border: 1px solid #31564b; border-radius: 14px; background: #16382e; }
+    .services { margin-block: 32px; padding: clamp(18px, 4vw, 36px); border: 1px solid #31564b; border-radius: 18px; background: #16382e; }
+    .services-title { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .services-title img { width: 44px; height: 44px; object-fit: contain; border-radius: 50%; }
+    .service-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid #537668; }
+    .service-tabs button { min-height: 44px; padding: 8px 12px; border: 1px solid #769688; border-radius: 8px; background: transparent; color: #fff4dc; font: inherit; font-weight: 600; cursor: pointer; }
+    .service-tabs button[aria-selected="true"] { background: #f2c14e; border-color: #f2c14e; color: #0f2a22; }
+    .service-tabs button:focus-visible, .services article:focus-visible { outline: 3px solid #f2c14e; outline-offset: 4px; }
+    .services article { padding-block: 22px 6px; max-width: 66ch; }
+    .services h3 { margin: 0; font: 600 1.65rem/1.15 Newsreader, Georgia, serif; }
     footer { border-top: 2px solid #d42e22; padding-block: 20px 32px; color: #f2c14e; font-weight: 600; }
   </style>
 </head>
@@ -36,19 +43,72 @@
   <main class="wrap">
     <h1>Solutions</h1>
     <p class="intro"><strong>Hired muscle for your marketing.</strong> Get CMO-level strategy and hands-on help with websites, SEO and campaigns, without the cost of a full-time hire.</p>
-    <div class="services">
-      <article><h2>Website creation</h2><p>Plan, write, design and build websites and campaign landing pages that make your offer clear and give visitors a simple way to enquire, book or buy.</p></article>
-      <article><h2>Booking, catalogues &amp; CRM</h2><p>Organise enquiries, customer records, appointments and service catalogues with practical workflows you can manage independently.</p></article>
-      <article><h2>Training &amp; handover</h2><p>Learn to update your website, manage bookings and operate the digital tools built for your business.</p></article>
-      <article><h2>SEO and local search</h2><p>Find what customers search for, improve your site structure and page copy, and strengthen your local search presence so people can find you.</p></article>
-      <article><h2>Marketing strategy and CMO support</h2><p>Set goals, identify your audience, prioritise channels and budget, and turn those decisions into a marketing roadmap your team can use.</p></article>
-      <article><h2>Brand and positioning</h2><p>Define who you serve, what makes your offer different, and how to explain it consistently across your website, campaigns and sales materials.</p></article>
-      <article><h2>Campaigns and content</h2><p>Plan launches and ongoing campaigns, develop creative concepts, and produce copy and content for social, email and paid media.</p></article>
-      <article><h2>Measurement and improvement</h2><p>Track where enquiries and sales come from, review what each channel contributes, and test changes to copy, offers and landing pages.</p></article>
-    </div>
+    <section class="services" aria-labelledby="services-title">
+      <h2 class="services-title" id="services-title"><img src="lantern-logo.png" alt="" width="44" height="44">Explore our services</h2>
+      <article><h3>Website creation</h3><p>Plan, write, design and build websites and campaign landing pages that make your offer clear and give visitors a simple way to enquire, book or buy.</p></article>
+      <article><h3>Booking, catalogues &amp; CRM</h3><p>Organise enquiries, customer records, appointments and service catalogues with practical workflows you can manage independently.</p></article>
+      <article><h3>Training &amp; handover</h3><p>Learn to update your website, manage bookings and operate the digital tools built for your business.</p></article>
+      <article><h3>SEO and local search</h3><p>Find what customers search for, improve your site structure and page copy, and strengthen your local search presence so people can find you.</p></article>
+      <article><h3>Marketing strategy and CMO support</h3><p>Set goals, identify your audience, prioritise channels and budget, and turn those decisions into a marketing roadmap your team can use.</p></article>
+      <article><h3>Brand and positioning</h3><p>Define who you serve, what makes your offer different, and how to explain it consistently across your website, campaigns and sales materials.</p></article>
+      <article><h3>Campaigns and content</h3><p>Plan launches and ongoing campaigns, develop creative concepts, and produce copy and content for social, email and paid media.</p></article>
+      <article><h3>Measurement and improvement</h3><p>Track where enquiries and sales come from, review what each channel contributes, and test changes to copy, offers and landing pages.</p></article>
+    </section>
     <p>Need something beyond what’s listed? Tell us what you have in mind and we’ll come back with what we can offer.</p>
     <p style="margin-top:24px"><a href="contact.html" style="display:inline-block;background:#f2c14e;color:#0f2a22;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700">Tell us what you need</a></p>
   </main>
   <footer class="wrap">Brought to you by the power of friendship.</footer>
+  <script>
+    const services = document.querySelector('.services');
+    const panels = Array.from(services.querySelectorAll('article'));
+    const tabList = document.createElement('div');
+    tabList.className = 'service-tabs';
+    tabList.setAttribute('role', 'tablist');
+    tabList.setAttribute('aria-labelledby', 'services-title');
+
+    const tabs = panels.map((panel, index) => {
+      const tab = document.createElement('button');
+      tab.type = 'button';
+      tab.id = 'service-tab-' + index;
+      tab.textContent = panel.querySelector('h3').textContent;
+      tab.setAttribute('role', 'tab');
+      panel.id = 'service-panel-' + index;
+      panel.tabIndex = 0;
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tab.id);
+      tab.setAttribute('aria-controls', panel.id);
+      tab.addEventListener('click', () => selectService(index));
+      tabList.append(tab);
+      return tab;
+    });
+
+    function selectService(index) {
+      tabs.forEach((tab, position) => {
+        const selected = index === position;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        panels[position].hidden = !selected;
+      });
+    }
+
+    tabList.addEventListener('keydown', event => {
+      const current = tabs.indexOf(event.target);
+      if (current < 0) return;
+      let next;
+      switch (event.key) {
+        case 'ArrowRight': next = (current + 1) % tabs.length; break;
+        case 'ArrowLeft': next = (current + tabs.length - 1) % tabs.length; break;
+        case 'Home': next = 0; break;
+        case 'End': next = tabs.length - 1; break;
+        default: return;
+      }
+      event.preventDefault();
+      selectService(next);
+      tabs[next].focus();
+    });
+
+    selectService(0);
+    services.insertBefore(tabList, panels[0]);
+  </script>
 </body>
 </html>
