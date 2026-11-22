@@ -7,7 +7,7 @@
 <title>Official Friend | AI-Powered Creative Studio for London</title>
 <meta name="description" content="Official Friend builds websites, brands and practical digital systems for independent businesses in London. Brought to you by the power of friendship.">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Instrument+Serif:ital@1&amp;family=Newsreader:wght@500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap">
 <style>
   * { box-sizing: border-box; }
   body { margin: 0; background: #0f2a22; line-height: 1.55; }
@@ -16,8 +16,11 @@
   .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
   .brand img { display: block; width: auto; height: 50px; }
   .header-link { color: #fff4dc; font-weight: 600; text-underline-offset: .3em; }
-  .hero-quote { border-left: 4px solid #f2c14e; }
-  .campaign-card { border: 1px solid #2c5446; }
+  main { display: grid; gap: clamp(36px, 6vw, 64px); }
+  h1, h2 { margin: 0; font: 600 clamp(2rem, 5vw, 3.25rem)/1.1 Newsreader, Georgia, serif; }
+  .brief { display: grid; gap: 14px; }
+  .brief p { max-width: 60ch; margin: 0; color: #d9e4dc; }
+  .reveal p { color: inherit; }
   #jumper {
     padding: clamp(24px, 5vw, 56px);
     background: #0a0a0a;
@@ -48,14 +51,12 @@
   }
   #jumper .jumper-title {
     margin: 0;
-    font: 400 clamp(2rem, 5vw, 4.25rem)/1 Anton, Impact, sans-serif;
-    text-transform: uppercase;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
   }
   .jumper-title em {
     display: block;
     margin-top: .15em;
-    font: italic 400 1.16em/.9 "Instrument Serif", Georgia, serif;
-    text-transform: none;
+    font-style: italic;
     color: #ff654f;
   }
   #jumper .jumper-panel {
@@ -67,13 +68,10 @@
   }
   #jumper .jumper-panel { background: #080807 !important; }
   .jumper-panel .jumper-choices { flex-wrap: wrap; justify-content: center; }
-  .reveal .action:first-child { background: #0f2a22; border-color: #0f2a22; color: #fff4dc; }
   .reveal .action:hover { text-decoration: none; box-shadow: inset 0 -3px currentColor; }
   @media (max-width: 740px) {
     #jumper { grid-template-columns: minmax(0, 1fr); gap: 26px !important; }
     #jumper .jumper-panel { min-height: 210px; }
-    .reveal .actions { display: grid; }
-    .reveal .action { justify-content: center; text-align: center; }
   }
   a:focus-visible { outline: 3px solid #f2c14e; outline-offset: 4px; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -85,44 +83,27 @@
 <div style="background:#0F2A22;color:#FFF4DC;font-family:system-ui,sans-serif;box-sizing:border-box;display:flex;flex-direction:column;align-items:center">
 <div style="width:100%;max-width:1120px;box-sizing:border-box;padding:0 24px;display:flex;flex-direction:column;gap:clamp(24px,4vw,44px);padding-bottom:64px">
 <header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><nav aria-label="Main navigation" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="header-link" href="solutions.html">Solutions</a><a class="header-link" href="contact.html">Contact</a></nav></header>
-<main style="display:grid;gap:clamp(52px,8vw,88px)">
+<main>
 <section id="jumper" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:center">
-<div style="display:flex;flex-direction:column;gap:22px"><h1 class="jumper-title">Marketing Genius <em>or Evil Scientist?</em></h1><p style="margin:0;font-size:19px;line-height:1.5;color:#D9E4DC;max-width:480px">You lead from the front. We’ve got your back.</p><p style="margin:0;color:#D9E4DC">The Official Friend is an AI-powered creative agency. We use AI to explore campaign ideas and develop content for independent businesses and creators. This campaign puts our own work to the test. Can a line on a jumper get two people talking?</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p><div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="contact.html">Start a project</a><a class="action" style="color:#fff4dc;border-color:#fff4dc;text-decoration:none" href="#services">Explore our services</a></div></div>
+<div style="display:flex;flex-direction:column;gap:22px"><h1 class="jumper-title">Marketing Genius <em>or Evil Scientist?</em></h1><p style="margin:0;font-size:19px;line-height:1.5;color:#D9E4DC;max-width:480px">You lead from the front. We’ve got your back.</p><p style="margin:0;color:#D9E4DC">An AI-powered creative studio for independent businesses and creators in London.</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p></div>
 <div class="jumper-panel" style="background:#000;border-radius:20px;padding:48px 32px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center"><div style="font-family:Newsreader,Georgia,serif;font-size:34px;line-height:1.15;color:#fff">Marketing genius<br>or evil scientist.</div><div class="jumper-choices" style="display:flex;gap:18px;font-size:14px;color:#fff"><span>☐ genius</span><span>☐ evil scientist</span><span>☐ both</span></div></div>
 </section>
-<section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:center">
-<div style="display:flex;flex-direction:column;gap:22px"><h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:clamp(2.75rem,6vw,4rem);line-height:1.05">This is our London.</h2><p style="margin:0;font-size:19px;line-height:1.5;color:#D9E4DC;max-width:480px">We’re neighbours, shopkeepers, makers and people with an idea and a friend willing to help. Some of us grew up on these streets. Some of us are still learning the bus routes.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#how" style="background:#B9281E;color:#FFF4DC;font-weight:600;font-size:16px;padding:14px 26px;border-radius:10px;text-decoration:none;min-height:20px">Why organisers matter</a></div></div>
-<blockquote class="hero-quote" style="margin:0;background:#16382E;border-radius:20px;padding:clamp(24px,5vw,48px);font:600 clamp(1.875rem,4vw,2.75rem)/1.15 Newsreader,Georgia,serif">One of us pulled up a chair. The rest of us made room.</blockquote>
-</section>
-<section id="how" aria-labelledby="organisers-title" style="display:flex;flex-direction:column;gap:16px">
-  <h2 id="organisers-title" style="margin:0;font:600 clamp(2.25rem,5vw,3.25rem)/1.1 Newsreader,Georgia,serif">Community organisers hold London together. Help us back them.</h2>
-  <p style="margin:0;max-width:65ch;color:#d9e4dc">Behind every Tuesday evening is someone who stayed late to stack the chairs. Someone booked the room, welcomed the first person through the door and came back the next week to do it all again.</p>
-  <p style="margin:0;max-width:65ch;color:#d9e4dc">The jumper is one way to start a conversation about their work.</p>
+<section id="how" class="brief" aria-labelledby="organisers-title">
+  <h2 id="organisers-title">Community organisers hold London together.</h2>
+  <p>Behind every Tuesday evening is someone who stayed late to stack the chairs.</p>
+  <p>The jumper starts a conversation about how we can back them.</p>
 </section>
 
-<section id="services" aria-labelledby="services-title" style="display:flex;flex-direction:column;gap:22px">
-  <div><p style="color:#f2c14e;letter-spacing:.16em;font-size:.8rem;font-weight:700;text-transform:uppercase;margin:0 0 8px">What we build</p>
-  <h2 id="services-title" style="font:600 clamp(2.4rem,5vw,3.5rem)/1.1 Newsreader,Georgia,serif;margin:0">Small business. Big imagination.</h2>
-  <p style="color:#d9e4dc;max-width:65ch">An independent creative and technology studio helping London's founders turn their ideas into something people can find, understand and use.</p></div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
-    <article class="campaign-card" style="background:#16382e;border-radius:14px;padding:24px"><h3 style="font:600 1.65rem Newsreader,Georgia,serif;margin:0 0 10px">Websites &amp; landing pages</h3><p style="margin:0;color:#d9e4dc">Clear, mobile-friendly sites designed around your identity and your customers' needs.</p></article>
-    <article class="campaign-card" style="background:#16382e;border-radius:14px;padding:24px"><h3 style="font:600 1.65rem Newsreader,Georgia,serif;margin:0 0 10px">Booking &amp; customer systems</h3><p style="margin:0;color:#d9e4dc">Practical CRM, appointment and catalogue workflows that reduce everyday admin.</p></article>
-    <article class="campaign-card" style="background:#16382e;border-radius:14px;padding:24px"><h3 style="font:600 1.65rem Newsreader,Georgia,serif;margin:0 0 10px">Brand &amp; creative campaigns</h3><p style="margin:0;color:#d9e4dc">Positioning, storytelling and AI-assisted creative concepts that help a business stand out.</p></article>
-    <article class="campaign-card" style="background:#16382e;border-radius:14px;padding:24px"><h3 style="font:600 1.65rem Newsreader,Georgia,serif;margin:0 0 10px">Training &amp; handover</h3><p style="margin:0;color:#d9e4dc">Tools that you can manage yourself, with practical support tailored to your needs.</p></article>
-  </div>
-  <div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="solutions.html">View all solutions</a></div>
-</section>
-<section aria-labelledby="approach-title" style="background:#16382e;padding:clamp(22px,5vw,42px);border-radius:20px;display:grid;gap:18px">
-  <h2 id="approach-title" style="font:600 clamp(2.1rem,4vw,3rem)/1.1 Newsreader,Georgia,serif;margin:0">Trust is the brief.</h2>
-  <p style="margin:0;color:#d9e4dc;max-width:70ch">We listen first, agree on what matters, build something useful, and show you how to run it. Our work is tailored to each project—no pressure, no unnecessary extras, and no requirement for public credit.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;color:#f2c14e;font-weight:650"><span>01 / Listen</span><span>02 / Build</span><span>03 / Handover</span><span>04 / Improve</span></div>
-  <div><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="contact.html">Tell us what you're building</a></div>
+<section id="services" class="brief" aria-labelledby="services-title">
+  <h2 id="services-title">What we build</h2>
+  <p>Websites, SEO, branding, campaigns and customer systems.</p>
+  <div><a class="header-link" href="solutions.html">View all solutions</a></div>
 </section>
 
-<section class="reveal" style="background:#F2C14E;color:#0F2A22;border-radius:20px;padding:clamp(22px,5vw,40px);display:flex;flex-direction:column;gap:16px"><h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:38px;line-height:1.15">Who’s got the organisers’ backs?</h2><p style="margin:0;font-size:18px;line-height:1.5;max-width:640px">When the people who book the room, spread the word and welcome everyone run out of time, regular meetups can quietly come to an end. If you’re keeping something going in your neighbourhood, tell us what would make the work easier.</p><div class="actions">
-      <a class="action" href="solutions.html">Solutions</a>
-      <a class="action" href="contact.html">Talk to us about a project</a>
-    </div>
+<section class="brief reveal" aria-labelledby="closing-title" style="background:#f2c14e;color:#0f2a22;border-radius:20px;padding:clamp(22px,5vw,40px)">
+  <h2 id="closing-title">Who’s got the organisers’ backs?</h2>
+  <p>When organisers run out of time, the places they bring people together can go quiet.</p>
+  <div><a class="action" href="contact.html">Tell us what would help</a></div>
 </section>
 </main>
 <footer style="border-top:2px solid #D42E22;padding-top:24px;color:#D9E4DC;font-size:14px">The Official Friend &copy; 2026</footer>
