@@ -73,6 +73,23 @@
     border-radius: 0;
   }
   #jumper .jumper-panel { background: #080807 !important; }
+  @media (prefers-reduced-motion: no-preference) {
+    #jumper .jumper-panel {
+      animation: jumper-settle 700ms ease-out;
+      transition: transform 260ms ease, box-shadow 260ms ease;
+    }
+    @keyframes jumper-settle {
+      0% { transform: perspective(900px) rotateY(-8deg) rotateX(4deg); }
+      65% { transform: perspective(900px) rotateY(3deg); }
+      100% { transform: perspective(900px) rotateY(0); }
+    }
+  }
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    #jumper .jumper-panel:hover {
+      transform: perspective(900px) rotateY(-7deg) rotateX(4deg) translateY(-4px);
+      box-shadow: 14px 16px 30px rgb(0 0 0 / 40%);
+    }
+  }
   .jumper-panel .jumper-choices { flex-wrap: wrap; justify-content: center; }
   .reveal .action:first-child { background: #0f2a22; border-color: #0f2a22; color: #fff4dc; }
   .reveal .action:hover { text-decoration: none; box-shadow: inset 0 -3px currentColor; }
