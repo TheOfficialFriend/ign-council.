@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Track jacket | The Official Friend</title>
+<style>*{box-sizing:border-box}body{margin:0;font:17px/1.55 system-ui,sans-serif;color:#172721;background:#fffaf0}header,main{max-width:1120px;margin:auto;padding:24px}header{border-bottom:1px solid #b4bcb2}a{color:inherit}header a{font-weight:800;text-decoration:none}main{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}figure{margin:0}img{width:100%;display:block;background:white;border-radius:16px}figcaption,small{font-size:.88rem}h1{font:600 clamp(2.5rem,5vw,4.5rem)/1 Georgia,serif;letter-spacing:-.045em;margin:.35em 0}h2{font-size:1.2rem}button,.pay{background:#193b30;color:white;border:0;border-radius:8px;padding:.85em 1.25em;font:inherit;cursor:pointer}select{padding:.6em;font:inherit;margin:.5em 0}section{border-top:1px solid #b4bcb2;margin-top:1.4rem;padding-top:.5rem}#credit{overflow-wrap:anywhere}@media(max-width:690px){main{grid-template-columns:1fr}img{max-height:48vh;object-fit:contain}}</style></head>
+<body><header><a href="index.html">THE OFFICIAL FRIEND</a> / Store</header><main><figure><img src="https://files.tapstitch.com/material/style/item_image/style/item_image/20251031/image-v1761890806-RQ0019-%288%29.JPG?x-oss-process=style%2Fhugepod-product" alt="Colour-block raglan track jacket, front view"><figcaption>Base garment shown before campaign artwork.</figcaption></figure><article><p>Marketing Genius or Evil Scientist?</p><h1>Colour-block track jacket</h1><b>£37.00</b><p>A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p><details><summary>Fabric, sizes and care</summary><p>Main fabric is 61.9% cotton and 38.1% polyester. Contrast panels are polyester. Sizes XS–2XL. Machine wash gently at 30°C.</p></details><section><p id="credit">Referred by The Official Friend</p><div id="live"><p>Live checkout is pending. You can try a simulated order below.</p></div><h2 id="title">Try the checkout</h2><div id="flow"></div><noscript>Enable JavaScript to try the referral checkout.</noscript></section></article></main>
+<script>
+const flow=document.querySelector('#flow');
+const title=document.querySelector('#title');
+const credit=document.querySelector('#credit');
+const valid=code=>/^OFF-[a-f0-9-]{36}$/i.test(code);
+function checkout(code){
+  const name=valid(code)?code:'The Official Friend';
+  credit.textContent='Referred by '+name;
+  title.textContent='Try the checkout';
+  flow.innerHTML='<form><label>Jacket size <select required name="size"><option value="">Choose size</option>'+['XS','S','M','L','XL','2XL'].map(size=>'<option>'+size+'</option>').join('')+'</select></label><p><button>Place test order</button></p></form><small>Simulated payment. No charge or shipment.</small>';
+  flow.querySelector('form').onsubmit=event=>{
+    event.preventDefault();
+    const buyer='OFF-'+crypto.randomUUID();
+    title.textContent='Test order confirmed';
+    flow.innerHTML='<p>£37 jacket · £23 costs<br>£9.80 for the referring wearer<br>£4.20 for The Official Friend</p><p>Simulated amounts before other fees.</p><a id="next">Try the new buyer’s referral link</a>';
+    const link=document.querySelector('#next');
+    const url=new URL(location.href);url.searchParams.set('ref',buyer);link.href=url.href;
+    link.onclick=event=>{
+      if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+      event.preventDefault();
+      try{history.pushState({},'',url)}catch{}
+      checkout(buyer);
+      flow.querySelector('select').focus();
+    };
+  };
+}
+function start(){checkout(new URLSearchParams(location.search).get('ref')||'')}
+window.addEventListener('popstate',start);start();
+</script></body></html>
