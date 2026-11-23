@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Marketing Genius or Evil Scientist? Track Jacket | The Official Friend</title>
-<style>*{box-sizing:border-box}body{margin:0;font:17px/1.55 system-ui,sans-serif;color:#172721;background:#fffaf0}header,main{max-width:1120px;margin:auto;padding:24px}header{border-bottom:1px solid #b4bcb2}a{color:inherit}header a{font-weight:800;text-decoration:none}main{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}figure{margin:0}img{width:100%;display:block;background:white;border-radius:16px}figcaption,small{font-size:.88rem}h1{font:600 clamp(2.5rem,5vw,4.5rem)/1 Georgia,serif;letter-spacing:-.045em;margin:.35em 0}h2{font-size:1.2rem}button,.pay{background:#193b30;color:white;border:0;border-radius:8px;padding:.85em 1.25em;font:inherit;cursor:pointer}select{padding:.6em;font:inherit;margin:.5em 0}section{border-top:1px solid #b4bcb2;margin-top:1.4rem;padding-top:.5rem}#credit{overflow-wrap:anywhere}@media(max-width:690px){main{grid-template-columns:1fr}img{max-height:48vh;object-fit:contain}}.jacket-gallery img{height:auto}.jacket-gallery figcaption{margin-top:.75rem;font-weight:650}.jacket-swatches{display:flex;gap:12px;margin-top:.5rem}.jacket-swatches button{background:var(--swatch);width:44px;height:44px;padding:0;border:1px solid #817d73;border-radius:50%}.jacket-swatches button[aria-pressed="true"]{outline:2px solid #193b30;outline-offset:3px}</style></head>
+<style>*{box-sizing:border-box}body{margin:0;font:17px/1.55 system-ui,sans-serif;color:#172721;background:#fffaf0}header,main{max-width:1120px;margin:auto;padding:24px}header{border-bottom:1px solid #b4bcb2}a{color:inherit}header a{font-weight:800;text-decoration:none}main{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}figure{margin:0}img{width:100%;display:block;background:white;border-radius:16px}figcaption,small{font-size:.88rem}h1{font:600 clamp(2.5rem,5vw,4.5rem)/1 Georgia,serif;letter-spacing:-.045em;margin:.35em 0}h2{font-size:1.2rem}button,.pay{background:#193b30;color:white;border:0;border-radius:8px;padding:.85em 1.25em;font:inherit;cursor:pointer}select{padding:.6em;font:inherit;margin:.5em 0}section{border-top:1px solid #b4bcb2;margin-top:1.4rem;padding-top:.5rem}#credit{overflow-wrap:anywhere}@media(max-width:690px){main{grid-template-columns:1fr}img{max-height:48vh;object-fit:contain}}.jacket-gallery img{height:auto}.jacket-gallery figcaption{margin-top:.75rem;font-weight:650}.jacket-swatches{display:flex;gap:12px;margin-top:.5rem}.jacket-swatches button{background:var(--swatch);width:44px;height:44px;padding:0;border:1px solid #817d73;border-radius:50%}.jacket-swatches button[aria-pressed="true"]{outline:2px solid #193b30;outline-offset:3px}.project-poll{margin:1.5rem 0}.project-poll fieldset{border:0;padding:0;margin:0 0 1rem;min-width:0}.project-poll legend{padding:0;margin-bottom:.5rem}.project-poll label:not([hidden]){display:flex;align-items:baseline;gap:.6rem;padding:.4rem 0}.project-poll label:has(textarea):not([hidden]){display:block}.project-poll textarea{display:block;width:100%;font:inherit}.project-poll button:disabled{opacity:.65;cursor:default}</style></head>
 <body><header><a href="index.html">THE OFFICIAL FRIEND</a> / Store</header><main><figure class="jacket-gallery">
   <img id="jacket-image" src="jacket-cream-navy.webp" width="1400" height="1400" alt="Cream and navy track jacket with Marketing Genius and Evil Scientist lettering">
   <figcaption id="jacket-colour">The Genius · Cream &amp; Navy</figcaption>
@@ -9,6 +9,21 @@
     <button type="button" data-colour="red-cream" aria-label="The Scientist, Red and Cream" aria-pressed="false" style="--swatch:#79192a"></button>
   </div>
 </figure><article><h1>Marketing Genius or Evil Scientist? Track Jacket</h1><b>£37.00</b><p>Sizes XS–2XL</p><p>A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p><details><summary>Fabric, sizes and care</summary><p>Main fabric is 61.9% cotton and 38.1% polyester. Contrast panels are polyester. Sizes XS–2XL. Machine wash gently at 30°C.</p></details><section><p id="credit">Referred by The Official Friend</p><div id="live"><p>Live checkout is pending. You can try a simulated order below.</p></div><h2 id="title">Try the checkout</h2><div id="flow"></div><noscript>Enable JavaScript to try the referral checkout.</noscript></section></article></main>
+<template id="project-poll">
+  <form class="project-poll">
+    <h3>You picked a jacket. Now pick a project for London.</h3>
+    <fieldset>
+      <legend>If Official Friend could bring one idea to life, which would you want to see? (Optional)</legend>
+      <label><input type="radio" name="project" value="farm" required> <span><strong>Grow Up, London</strong><br>A neighbourhood vertical farm growing fresh food close to home.</span></label>
+      <label><input type="radio" name="project" value="chess"> <span><strong>Checkmate Chemistry</strong><br>A chess dating app with real-life meetups.</span></label>
+      <label><input type="radio" name="project" value="supper"> <span><strong>The Friend Table</strong><br>Book a seat at a local supper club and share a meal with five people you haven’t met yet.</span></label>
+      <label><input type="radio" name="project" value="other"> <span><strong>Your idea</strong><br>What do you wish existed in your part of London?</span></label>
+      <label hidden>Your idea<textarea name="idea" rows="3" maxlength="300"></textarea></label>
+    </fieldset>
+    <button type="submit">Try voting</button>
+    <p role="status"></p>
+  </form>
+</template>
 <script>
 const jacketImage = document.querySelector('#jacket-image');
 const colourCaption = document.querySelector('#jacket-colour');
@@ -40,6 +55,30 @@ function checkout(code){
     const buyer='OFF-'+crypto.randomUUID();
     title.textContent='Test order confirmed';
     flow.innerHTML='<p>£37 jacket · £23 costs<br>£9.80 for the referring wearer<br>£4.20 for The Official Friend</p><p>Simulated amounts before other fees.</p><a id="next">Try the new buyer’s referral link</a>';
+    const poll = document.querySelector('#project-poll').content.cloneNode(true);
+    flow.insertBefore(poll, flow.querySelector('#next'));
+    const pollForm = flow.querySelector('.project-poll');
+    const choice = pollForm.elements.project;
+    const idea = pollForm.elements.idea;
+    pollForm.addEventListener('change', () => {
+      const isWriteIn = choice.value === 'other';
+      idea.closest('label').hidden = !isWriteIn;
+      idea.required = isWriteIn;
+      idea.setCustomValidity('');
+    });
+    idea.addEventListener('input', () => idea.setCustomValidity(''));
+    pollForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (choice.value === 'other' && !idea.value.trim()) {
+        idea.setCustomValidity('Enter a few words about your idea.');
+        idea.reportValidity();
+        return;
+      }
+      pollForm.querySelector('fieldset').disabled = true;
+      pollForm.querySelector('button').disabled = true;
+      pollForm.querySelector('[role="status"]').textContent =
+        'Thanks for trying the poll. This test response wasn’t sent.';
+    });
     const link=document.querySelector('#next');
     const url=new URL(location.href);url.searchParams.set('ref',buyer);link.href=url.href;
     link.onclick=event=>{
