@@ -1,8 +1,29 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Track jacket | The Official Friend</title>
-<style>*{box-sizing:border-box}body{margin:0;font:17px/1.55 system-ui,sans-serif;color:#172721;background:#fffaf0}header,main{max-width:1120px;margin:auto;padding:24px}header{border-bottom:1px solid #b4bcb2}a{color:inherit}header a{font-weight:800;text-decoration:none}main{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}figure{margin:0}img{width:100%;display:block;background:white;border-radius:16px}figcaption,small{font-size:.88rem}h1{font:600 clamp(2.5rem,5vw,4.5rem)/1 Georgia,serif;letter-spacing:-.045em;margin:.35em 0}h2{font-size:1.2rem}button,.pay{background:#193b30;color:white;border:0;border-radius:8px;padding:.85em 1.25em;font:inherit;cursor:pointer}select{padding:.6em;font:inherit;margin:.5em 0}section{border-top:1px solid #b4bcb2;margin-top:1.4rem;padding-top:.5rem}#credit{overflow-wrap:anywhere}@media(max-width:690px){main{grid-template-columns:1fr}img{max-height:48vh;object-fit:contain}}</style></head>
-<body><header><a href="index.html">THE OFFICIAL FRIEND</a> / Store</header><main><figure><img referrerpolicy="no-referrer" src="https://ajmall-vc-public-bucket.oss-us-west-1.aliyuncs.com/material/style/item_image/image-RQ0019%20%282%29-v1761880310.JPG" alt="Colour-block raglan track jacket, front view"><figcaption>Base garment shown before campaign artwork.</figcaption></figure><article><p>Marketing Genius or Evil Scientist?</p><h1>Colour-block track jacket</h1><b>£37.00</b><p>A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p><details><summary>Fabric, sizes and care</summary><p>Main fabric is 61.9% cotton and 38.1% polyester. Contrast panels are polyester. Sizes XS–2XL. Machine wash gently at 30°C.</p></details><section><p id="credit">Referred by The Official Friend</p><div id="live"><p>Live checkout is pending. You can try a simulated order below.</p></div><h2 id="title">Try the checkout</h2><div id="flow"></div><noscript>Enable JavaScript to try the referral checkout.</noscript></section></article></main>
+<style>*{box-sizing:border-box}body{margin:0;font:17px/1.55 system-ui,sans-serif;color:#172721;background:#fffaf0}header,main{max-width:1120px;margin:auto;padding:24px}header{border-bottom:1px solid #b4bcb2}a{color:inherit}header a{font-weight:800;text-decoration:none}main{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}figure{margin:0}img{width:100%;display:block;background:white;border-radius:16px}figcaption,small{font-size:.88rem}h1{font:600 clamp(2.5rem,5vw,4.5rem)/1 Georgia,serif;letter-spacing:-.045em;margin:.35em 0}h2{font-size:1.2rem}button,.pay{background:#193b30;color:white;border:0;border-radius:8px;padding:.85em 1.25em;font:inherit;cursor:pointer}select{padding:.6em;font:inherit;margin:.5em 0}section{border-top:1px solid #b4bcb2;margin-top:1.4rem;padding-top:.5rem}#credit{overflow-wrap:anywhere}@media(max-width:690px){main{grid-template-columns:1fr}img{max-height:48vh;object-fit:contain}}.jacket-gallery img{height:auto}.jacket-gallery figcaption{margin-top:.75rem;font-weight:650}.jacket-swatches{display:flex;gap:12px;margin-top:.5rem}.jacket-swatches button{background:var(--swatch);width:44px;height:44px;padding:0;border:1px solid #817d73;border-radius:50%}.jacket-swatches button[aria-pressed="true"]{outline:2px solid #193b30;outline-offset:3px}</style></head>
+<body><header><a href="index.html">THE OFFICIAL FRIEND</a> / Store</header><main><figure class="jacket-gallery">
+  <img id="jacket-image" src="jacket-cream-navy.webp" width="1400" height="1400" alt="Cream and navy track jacket with Marketing Genius and Evil Scientist lettering">
+  <figcaption id="jacket-colour">Cream &amp; Navy</figcaption>
+  <div class="jacket-swatches" role="group" aria-label="Jacket colour preview">
+    <button type="button" data-colour="cream-navy" aria-label="Cream and navy" aria-pressed="true" style="--swatch:#f6f1e4"></button>
+    <button type="button" data-colour="red-cream" aria-label="Red and cream" aria-pressed="false" style="--swatch:#79192a"></button>
+  </div>
+</figure><article><p>Marketing Genius or Evil Scientist?</p><h1>Colour-block track jacket</h1><b>£37.00</b><p>Sizes XS–2XL</p><p>A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p><details><summary>Fabric, sizes and care</summary><p>Main fabric is 61.9% cotton and 38.1% polyester. Contrast panels are polyester. Sizes XS–2XL. Machine wash gently at 30°C.</p></details><section><p id="credit">Referred by The Official Friend</p><div id="live"><p>Live checkout is pending. You can try a simulated order below.</p></div><h2 id="title">Try the checkout</h2><div id="flow"></div><noscript>Enable JavaScript to try the referral checkout.</noscript></section></article></main>
 <script>
+const jacketImage = document.querySelector('#jacket-image');
+const colourCaption = document.querySelector('#jacket-colour');
+const swatches = document.querySelectorAll('.jacket-swatches button');
+const colourLabels = { 'cream-navy': 'Cream & Navy', 'red-cream': 'Red & Cream' };
+
+for (const swatch of swatches) {
+  swatch.addEventListener('click', () => {
+    const colour = swatch.dataset.colour;
+    jacketImage.src = 'jacket-' + colour + '.webp';
+    jacketImage.alt = colourLabels[colour] + ' track jacket with Marketing Genius and Evil Scientist lettering';
+    colourCaption.textContent = colourLabels[colour];
+    for (const option of swatches) option.setAttribute('aria-pressed', String(option === swatch));
+  });
+}
 const flow=document.querySelector('#flow');
 const title=document.querySelector('#title');
 const credit=document.querySelector('#credit');
