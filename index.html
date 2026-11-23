@@ -107,9 +107,13 @@
   .action { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 2px solid; border-radius: 10px; color: #0f2a22; font-weight: 650; }
   .action:focus-visible { outline-color: #0f2a22; }
   #jumper .jacket-display { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-content:center; align-items:start; gap:clamp(8px,2vw,20px); padding:clamp(10px,2vw,22px); border-radius:20px; }
-  .jacket-display a { display:grid; gap:.5rem; text-align:center; font-weight:700; text-decoration:none; color:#fff4dc; }
-  .jacket-display a:hover span { text-decoration:underline; }
+  .jacket-display figure { margin:0; display:grid; gap:.5rem; text-align:center; font-weight:700; color:#fff4dc; }
   .jacket-display img { display:block; width:100%; height:auto; border-radius:10px; background:#fff; }
+  .london-vote { display:flex; align-items:flex-start; gap:clamp(12px,3vw,24px); padding:clamp(18px,4vw,36px); border:1px solid #79693e; border-radius:20px; background:#18372d; color:#fff4dc; }
+  .london-vote img { flex:none; }
+  .london-vote h2 { margin:0; font:600 clamp(1.75rem,4vw,2.5rem)/1.1 Newsreader,Georgia,serif; }
+  .london-vote p { margin:.6rem 0 .85rem; }
+  .london-vote a { color:#f2c14e; font-weight:700; text-underline-offset:.2em; }
 </style>
 </head>
 <body>
@@ -118,15 +122,23 @@
 <header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><nav aria-label="Main navigation" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="header-link" href="store.html">Store</a><a class="header-link" href="solutions.html">Solutions</a><a class="header-link" href="contact.html">Contact</a></nav></header>
 <main style="display:grid;gap:clamp(52px,8vw,88px)">
 <section id="jumper" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:center">
-<div style="display:flex;flex-direction:column;gap:22px"><h1 class="jumper-title">Marketing Genius <em>or Evil Scientist?</em></h1><p id="jacket-referral" hidden style="margin:0;color:#f2c14e">You found Leo’s jacket · Official Friend No. 001</p><p class="jumper-description">Official Friend is an AI-powered creative agency. This campaign is our way of tackling loneliness and isolation in London. The jackets give strangers an excuse to say hello, and our local projects give them a reason to meet again.</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p><div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="store.html">See the jackets</a><a class="action" style="color:#fff4dc;border-color:#fff4dc;text-decoration:none" href="#services">Explore our services</a></div><p style="margin:0"><a href="store.html?poll=london" style="color:#f2c14e">Vote for a London project</a></p></div>
+<div style="display:flex;flex-direction:column;gap:22px"><h1 class="jumper-title">Marketing Genius <em>or Evil Scientist?</em></h1><p id="jacket-referral" hidden style="margin:0;color:#f2c14e">You found Leo’s jacket · Official Friend No. 001</p><p class="jumper-description">Official Friend is an AI-powered creative agency. This campaign is our way of tackling loneliness and isolation in London. The jackets give strangers an excuse to say hello, and our local projects give them a reason to meet again.</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p><div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="store.html">See the jackets</a><a class="action" style="color:#fff4dc;border-color:#fff4dc;text-decoration:none" href="#services">Explore our services</a></div></div>
 <div class="jumper-panel jacket-display">
-  <a href="store.html"><img src="jacket-cream-navy.webp" width="1400" height="1400" alt="Cream and navy track jacket, front view"><span>The Genius</span></a>
-  <a href="store.html"><img src="jacket-red-cream.webp" width="1400" height="1400" alt="Red and cream track jacket, front view"><span>The Scientist</span></a>
+  <figure><img src="jacket-cream-navy.webp" width="1400" height="1400" alt="Cream and navy track jacket, front view"><figcaption>The Genius</figcaption></figure>
+  <figure><img src="jacket-red-cream.webp" width="1400" height="1400" alt="Red and cream track jacket, front view"><figcaption>The Scientist</figcaption></figure>
 </div>
 </section>
 <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:center">
 <div style="display:flex;flex-direction:column;gap:22px"><h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:600;font-size:clamp(2.75rem,6vw,4rem);line-height:1.05">This is our London.</h2><p style="margin:0;font-size:19px;line-height:1.5;color:#D9E4DC;max-width:480px">We’re neighbours, shopkeepers, makers and people with an idea and a friend willing to help. Some of us grew up on these streets. Some of us are still learning the bus routes.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="#how" style="background:#B9281E;color:#FFF4DC;font-weight:600;font-size:16px;padding:14px 26px;border-radius:10px;text-decoration:none;min-height:20px">Why organisers matter</a></div></div>
 <blockquote class="hero-quote" style="margin:0;background:#16382E;border-radius:20px;padding:clamp(24px,5vw,48px);font:600 clamp(1.875rem,4vw,2.75rem)/1.15 Newsreader,Georgia,serif">One of us pulled up a chair. The rest of us made room.</blockquote>
+</section>
+<section class="london-vote" aria-labelledby="london-vote-title">
+  <img class="section-lantern" src="lantern-logo.png" alt="" width="48" height="48" loading="lazy">
+  <div>
+    <h2 id="london-vote-title">What should London try next?</h2>
+    <p>A neighbourhood farm, a chess singles night, or dinner with strangers? Pick up to two ideas you’d like us to explore.</p>
+    <a href="store.html?poll=london">Vote for a London project</a>
+  </div>
 </section>
 <section id="how" aria-labelledby="organisers-title" style="display:flex;flex-direction:column;gap:16px">
   <img class="section-lantern" src="lantern-logo.png" alt="" width="48" height="48" loading="lazy">
