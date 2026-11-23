@@ -14,11 +14,11 @@
   <form class="project-poll">
     <h3 id="project-poll-title" tabindex="-1" autofocus>You picked a jacket. Now pick a project for London.</h3>
     <fieldset>
-      <legend>If Official Friend could bring one idea to life, which would you want to see? (Optional)</legend>
-      <label><input type="radio" name="project" value="farm" required> <span><strong>Grow Up, London</strong><br>A neighbourhood vertical farm growing fresh food close to home.</span></label>
-      <label><input type="radio" name="project" value="chess"> <span><strong>Checkmate Chemistry</strong><br>A chess dating app with real-life meetups.</span></label>
-      <label><input type="radio" name="project" value="supper"> <span><strong>The Friend Table</strong><br>Book a seat at a local supper club and share a meal with five people you haven’t met yet.</span></label>
-      <label><input type="radio" name="project" value="other"> <span><strong>Your idea</strong><br>What do you wish existed in your part of London?</span></label>
+      <legend>Choose up to two projects you’d like to see. (Optional)</legend>
+      <label><input type="checkbox" name="project" value="farm"> <span><strong>Grow Up, London</strong><br>A neighbourhood vertical farm growing fresh food close to home.</span></label>
+      <label><input type="checkbox" name="project" value="chess"> <span><strong>Checkmate Chemistry</strong><br>A chess dating app with real-life meetups.</span></label>
+      <label><input type="checkbox" name="project" value="supper"> <span><strong>The Friend Table</strong><br>Book a seat at a local supper club and share a meal with five people you haven’t met yet.</span></label>
+      <label><input type="checkbox" name="project" value="other"> <span><strong>Your idea</strong><br>What do you wish existed in your part of London?</span></label>
       <label hidden>Your idea<textarea name="idea" rows="3" maxlength="300"></textarea></label>
     </fieldset>
     <div class="project-actions">
@@ -50,6 +50,51 @@ const flow=document.querySelector('#flow');
 const title=document.querySelector('#title');
 const credit=document.querySelector('#credit');
 const valid=code=>/^OFF-[a-f0-9-]{36}$/i.test(code);
+function openProjectPoll(returnFocus, afterOrder = false) {
+  const template = document.querySelector('#project-poll');
+  const dialog = template.content.firstElementChild.cloneNode(true);
+  document.body.append(dialog);
+  if (!afterOrder) dialog.querySelector('h3').textContent = 'What should Official Friend build in London next?';
+  const form = dialog.querySelector('form');
+  const choices = [...form.querySelectorAll('[name="project"]')];
+  const idea = form.elements.idea;
+  const submit = form.querySelector('[type="submit"]');
+  const dismiss = form.querySelector('.project-dismiss');
+  const status = form.querySelector('[role="status"]');
+  dismiss.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('close', () => {
+    dialog.remove();
+    returnFocus?.focus();
+  });
+  function updateChoices() {
+    const selected = choices.filter(choice => choice.checked);
+    for (const choice of choices) choice.disabled = selected.length === 2 && !choice.checked;
+    const isWriteIn = selected.some(choice => choice.value === 'other');
+    idea.closest('label').hidden = !isWriteIn;
+    idea.required = isWriteIn;
+    idea.setCustomValidity('');
+    submit.disabled = selected.length === 0;
+  }
+  form.addEventListener('change', updateChoices);
+  idea.addEventListener('input', () => idea.setCustomValidity(''));
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (submit.disabled) return;
+    if (idea.required && !idea.value.trim()) {
+      idea.setCustomValidity('Enter a few words about your idea.');
+      idea.reportValidity();
+      return;
+    }
+    form.querySelector('fieldset').disabled = true;
+    submit.disabled = true;
+    dismiss.textContent = 'Close';
+    status.textContent = 'Thanks for trying the poll. This test response wasn’t sent.';
+    dismiss.focus();
+  });
+  updateChoices();
+  dialog.showModal();
+}
+
 function checkout(code){
   const name=valid(code)?code:'The Official Friend';
   credit.textContent='Referred by '+name;
@@ -60,38 +105,8 @@ function checkout(code){
     const buyer='OFF-'+crypto.randomUUID();
     title.textContent='Test order confirmed';
     flow.innerHTML='<p>£37 jacket · £23 costs<br>£9.80 for the referring wearer<br>£4.20 for The Official Friend</p><p>Simulated amounts before other fees.</p><a id="next">Try the new buyer’s referral link</a>';
-    const poll = document.querySelector('#project-poll').content.cloneNode(true);
-    flow.insertBefore(poll, flow.querySelector('#next'));
-    const dialog = flow.querySelector('.project-dialog');
-    const pollForm = dialog.querySelector('.project-poll');
-    const dismiss = dialog.querySelector('.project-dismiss');
-    dismiss.addEventListener('click', () => dialog.close());
-    dialog.addEventListener('close', () => flow.querySelector('#next')?.focus());
-    const choice = pollForm.elements.project;
-    const idea = pollForm.elements.idea;
-    pollForm.addEventListener('change', () => {
-      const isWriteIn = choice.value === 'other';
-      idea.closest('label').hidden = !isWriteIn;
-      idea.required = isWriteIn;
-      idea.setCustomValidity('');
-    });
-    idea.addEventListener('input', () => idea.setCustomValidity(''));
-    pollForm.addEventListener('submit', event => {
-      event.preventDefault();
-      if (choice.value === 'other' && !idea.value.trim()) {
-        idea.setCustomValidity('Enter a few words about your idea.');
-        idea.reportValidity();
-        return;
-      }
-      pollForm.querySelector('fieldset').disabled = true;
-      pollForm.querySelector('[type="submit"]').disabled = true;
-      dismiss.textContent = 'Close';
-      dismiss.focus();
-      pollForm.querySelector('[role="status"]').textContent =
-        'Thanks for trying the poll. This test response wasn’t sent.';
-    });
     const link=document.querySelector('#next');
-    const url=new URL(location.href);url.searchParams.set('ref',buyer);link.href=url.href;
+    const url=new URL(location.href);url.searchParams.delete('poll');url.searchParams.set('ref',buyer);link.href=url.href;
     link.onclick=event=>{
       if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
       event.preventDefault();
@@ -99,9 +114,15 @@ function checkout(code){
       checkout(buyer);
       flow.querySelector('select').focus();
     };
-    dialog.showModal();
+    openProjectPoll(link, true);
   };
 }
 function start(){checkout(new URLSearchParams(location.search).get('ref')||'')}
 window.addEventListener('popstate',start);start();
+const pollUrl = new URL(location.href);
+if (pollUrl.searchParams.get('poll') === 'london') {
+  pollUrl.searchParams.delete('poll');
+  history.replaceState(history.state, '', pollUrl);
+  openProjectPoll(flow.querySelector('select'));
+}
 </script></body></html>
