@@ -8,7 +8,7 @@
     <button type="button" data-colour="cream-navy" aria-label="The Genius, Cream and Navy" aria-pressed="true" style="--swatch:#f6f1e4"></button>
     <button type="button" data-colour="red-cream" aria-label="The Scientist, Red and Cream" aria-pressed="false" style="--swatch:#79192a"></button>
   </div>
-</figure><article><h1>Marketing Genius or Evil Scientist? Track Jacket</h1><p>Sizes XS–2XL</p><p>Made to order. Estimated UK delivery is 8–16 days from the date you order.</p><p>A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p><details><summary>Fabric, sizes and care</summary><p>Main fabric is 61.9% cotton and 38.1% polyester. Contrast panels are polyester. Sizes XS–2XL. Machine wash gently at 30°C.</p></details><section><p id="credit">Referred by The Official Friend</p><div id="live"><p>Live checkout is pending. You can try a simulated order below.</p></div><h2 id="title">Try the checkout</h2><div id="flow"></div><noscript>Enable JavaScript to try the referral checkout.</noscript></section></article></main>
+</figure><article><h1>Marketing Genius or Evil Scientist? Track Jacket</h1><p>Sizes XS–2XL</p><p>Made to order. Estimated UK delivery is 8–16 days from the date you order.</p><p>A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p><details><summary>Fabric, sizes and care</summary><p>Main fabric is 61.9% cotton and 38.1% polyester. Contrast panels are polyester. Sizes XS–2XL. Machine wash gently at 30°C.</p></details><section><p id="credit">Referred by The Official Friend</p><div id="live"><p>Live checkout is pending. Try our Stripe sandbox checkout below.</p></div><h2 id="title">Try the checkout</h2><div id="flow"></div><noscript>Enable JavaScript to try the referral checkout.</noscript></section></article></main>
 <template id="project-poll">
   <dialog class="project-dialog" aria-labelledby="project-poll-title">
   <form class="project-poll">
@@ -96,25 +96,19 @@ function openProjectPoll(returnFocus, afterOrder = false) {
 }
 
 function checkout(code){
-  const name=valid(code)?code:'The Official Friend';
-  credit.textContent='Referred by '+name;
-  title.textContent='Try the checkout';
-  flow.innerHTML='<form><label>Jacket size <select required name="size"><option value="">Choose size</option>'+['XS','S','M','L','XL','2XL'].map(size=>'<option>'+size+'</option>').join('')+'</select></label><p><button>Place test order</button></p></form><small>Simulated payment. No charge or shipment.</small>';
-  flow.querySelector('form').onsubmit=event=>{
+  const testCode = code === 'OFTEST001' ? code : '';
+  credit.textContent=testCode?'Referred by test ambassador '+testCode:'Referred by The Official Friend';
+  title.textContent='Try the £37 checkout';
+  flow.innerHTML='<p><strong>£37.00 GBP</strong></p><p>Choose your jacket colour and size on Stripe’s secure checkout page.</p><form><label>Test referral code (optional) <input name="referral" maxlength="32" autocomplete="off" placeholder="OFTEST001"></label><p><button>Continue to Stripe test checkout</button></p><p role="status"></p></form><small>Sandbox only. No real charge or shipment.</small>';
+  const form=flow.querySelector('form');
+  form.elements.referral.value=testCode;
+  form.onsubmit=event=>{
     event.preventDefault();
-    const buyer='OFF-'+crypto.randomUUID();
-    title.textContent='Test order confirmed';
-    flow.innerHTML='<p>Your test order is complete.</p><a id="next">Try the new buyer’s referral link</a>';
-    const link=document.querySelector('#next');
-    const url=new URL(location.href);url.searchParams.delete('poll');url.searchParams.set('ref',buyer);link.href=url.href;
-    link.onclick=event=>{
-      if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
-      event.preventDefault();
-      try{history.pushState({},'',url)}catch{}
-      checkout(buyer);
-      flow.querySelector('select').focus();
-    };
-    openProjectPoll(link, true);
+    const referral=form.elements.referral.value.trim().toUpperCase();
+    if(referral && referral!=='OFTEST001'){form.querySelector('[role="status"]').textContent='This test code is not recognised. Use OFTEST001 or leave blank.';return;}
+    const url=new URL('https://buy.stripe.com/test_6oU4gA1hoac34pl4999IQ01');
+    if(referral)url.searchParams.set('client_reference_id',referral);
+    location.assign(url.href);
   };
 }
 function start(){checkout(new URLSearchParams(location.search).get('ref')||'')}
@@ -123,6 +117,6 @@ const pollUrl = new URL(location.href);
 if (pollUrl.searchParams.get('poll') === 'london') {
   pollUrl.searchParams.delete('poll');
   history.replaceState(history.state, '', pollUrl);
-  openProjectPoll(flow.querySelector('select'));
+  openProjectPoll(flow.querySelector('button'));
 }
 </script></body></html>
