@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0F2A22">
+<title>Campaigns | The Official Friend</title>
+<meta name="description" content="Explore The Unseen Economy and Official Friend’s creative campaigns.">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap">
+<link rel="stylesheet" href="official-friend-editorial.css">
+</head>
+<body>
+<div style="background:#0F2A22;color:#FFF4DC;font-family:system-ui,sans-serif;box-sizing:border-box;display:flex;flex-direction:column;align-items:center">
+<div style="width:100%;max-width:1120px;box-sizing:border-box;padding:0 24px;display:flex;flex-direction:column;gap:clamp(24px,4vw,44px);padding-bottom:64px">
+<header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" data-referral-link href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><nav aria-label="Main navigation" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="header-link" aria-current="page" data-referral-link href="campaigns.html">Campaigns</a><a class="header-link" data-referral-link href="store.html">Store</a><a class="header-link" href="solutions.html">Solutions</a><a class="header-link" data-referral-link href="people.html">People</a><a class="header-link" href="contact.html">Contact</a></nav></header>
+<main style="display:grid;gap:clamp(36px,6vw,68px)">
+<section id="campaigns" class="campaigns" aria-labelledby="campaigns-title">
+  <h1 id="campaigns-title" class="page-title">Our campaigns</h1>
+  <article class="research" aria-labelledby="research-title">
+    <div class="research-copy">
+      <p class="section-label">Independent research · Kensington &amp; Chelsea</p>
+      <h2 id="research-title">The Unseen Economy</h2>
+      <p>We’re exploring how older independent business owners in the Royal Borough of Kensington and Chelsea use digital tools, where they run into barriers, and what support would make a difference.</p>
+      <p>We want to hear directly from owners and learn where practical help, from building a first website to improving an existing one, can help customers find them online.</p>
+      <div class="actions agency-actions">
+        <a class="action primary-action" href="mailto:officialfriend@duck.com?subject=The%20Unseen%20Economy">Get in touch about the research</a>
+        <a class="action" href="solutions.html">Explore website and digital support</a>
+      </div>
+    </div>
+    <aside class="blue-book" aria-labelledby="blue-book-title">
+      <p class="section-label">Proposed independent report</p>
+      <div><img src="lantern-logo.png" width="44" height="44" alt=""><h3 id="blue-book-title">The Blue Book</h3><p>The Unseen Economy</p></div>
+      <p class="book-publisher">The Official Friend<br>Kensington &amp; Chelsea</p>
+    </aside>
+  </article>
+<section id="jumper" aria-labelledby="jacket-title">
+<div class="campaign-jackets">
+<h2 id="jacket-title" class="jumper-title">Marketing Genius <em>or Evil Scientist?</em></h2>
+<div class="jumper-panel jacket-display">
+  <figure><img src="jacket-cream-navy.webp" width="1400" height="1400" alt="Cream and navy track jacket, front view"><figcaption>The Genius</figcaption></figure>
+  <figure><img src="jacket-red-cream.webp" width="1400" height="1400" alt="Red and cream track jacket, front view"><figcaption>The Scientist</figcaption></figure>
+</div>
+</div>
+<div class="campaign-copy"><p class="jacket-hook">We put a question on a jacket.</p><p id="jacket-referral" hidden style="margin:0;color:#f2c14e">You found Leo’s jacket · Official Friend No. 001</p><p class="jumper-description">Wear it. Get asked. Start talking. A simple way to give Londoners a reason to say hello.</p><p class="jumper-description">Official Friend is an AI-powered creative agency based in Kensington and Chelsea. We build websites, booking systems and campaigns for London’s independent businesses, creatives and community organisations.</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p><div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" data-referral-link href="store.html">See the jackets</a><a class="action" style="color:#fff4dc;border-color:#fff4dc;text-decoration:none" href="contact.html">Start a project</a></div>
+  <div class="jacket-referrals">
+    <h3>How jacket referrals work</h3>
+    <p>When you buy through an ambassador’s referral link, the ambassador earns <strong>70%</strong> of the sale margin after costs. Official Friend keeps the remaining <strong>30%</strong>.</p>
+  </div>
+</div>
+</section>
+</section>
+
+</main>
+<footer style="border-top:2px solid #D42E22;padding-top:24px;color:#D9E4DC;font-size:14px"><div class="footer-brand"><img class="section-lantern" src="lantern-logo.png" alt="" width="34" height="34" loading="lazy"><span>The Official Friend &copy; 2026</span></div></footer>
+</div>
+</div>
+<script>
+  const referral = new URLSearchParams(location.search).get('ref');
+  if (referral) {
+    for (const link of document.querySelectorAll('[data-referral-link]')) {
+      const destination = new URL(link.href);
+      destination.searchParams.set('ref', referral);
+      link.href = destination.href;
+    }
+    const badge = document.getElementById('jacket-referral');
+    if (badge && referral === 'MGES-001') badge.hidden = false;
+  }
+</script>
+</body>
+</html>
