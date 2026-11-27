@@ -119,9 +119,9 @@
   .london-deck blockquote { margin:1rem 0 0; padding:.75rem 1rem; border-left:2px solid #f2c14e; max-width:60ch; background:#0f2a22; }
   .london-deck a { color:#f2c14e; font-weight:700; text-underline-offset:.2em; }
   .london-deck article + article:not([hidden]) { margin-top:1.5rem; }
-  #community { padding: clamp(22px, 5vw, 40px); border: 1px solid #416955; border-radius: 20px; background: #18382d; color: #fff4dc; }
-  #community h2 { margin: 0 0 10px; font-family: Newsreader, Georgia, serif; font-size: clamp(32px, 5vw, 48px); }
-  .community-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; margin-top: 24px; }
+  #community { margin-top: 1.5rem; }
+  #community summary { cursor: pointer; width: fit-content; font-weight: 700; }
+  #community .community-card { margin-top: .75rem; max-width: 40rem; }
   .community-card { display: flex; flex-direction: column; padding: 22px; background: #0f2a22; border: 1px solid #416955; border-radius: 14px; }
   .community-card h3 { margin: 0; font-size: 22px; }
   .community-card p { margin: 10px 0 18px; }
@@ -131,7 +131,7 @@
 <body>
 <div style="background:#0F2A22;color:#FFF4DC;font-family:system-ui,sans-serif;box-sizing:border-box;display:flex;flex-direction:column;align-items:center">
 <div style="width:100%;max-width:1120px;box-sizing:border-box;padding:0 24px;display:flex;flex-direction:column;gap:clamp(24px,4vw,44px);padding-bottom:64px">
-<header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><nav aria-label="Main navigation" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="header-link" href="store.html">Store</a><a class="header-link" href="solutions.html">Solutions</a><a class="header-link" href="#community">Community</a><a class="header-link" href="contact.html">Contact</a></nav></header>
+<header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><nav aria-label="Main navigation" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="header-link" href="store.html">Store</a><a class="header-link" href="solutions.html">Solutions</a><a class="header-link" href="#how">Our London</a><a class="header-link" href="contact.html">Contact</a></nav></header>
 <main style="display:grid;gap:clamp(52px,8vw,88px)">
 <section id="jumper" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:center">
 <div style="display:flex;flex-direction:column;gap:22px"><h1 class="jumper-title">Marketing Genius <em>or Evil Scientist?</em></h1><p id="jacket-referral" hidden style="margin:0;color:#f2c14e">You found Leo’s jacket · Official Friend No. 001</p><p class="jumper-description">Based in Kensington and Chelsea, Official Friend is an AI-powered creative agency for London.</p><p class="jumper-description">“Marketing Genius or Evil Scientist?” is our jacket campaign. The question on the front gives strangers an excuse to say hello. Our local projects give them a reason to meet again.</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p><div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="store.html">See the jackets</a><a class="action" style="color:#fff4dc;border-color:#fff4dc;text-decoration:none" href="#services">Explore our services</a></div></div>
@@ -150,6 +150,14 @@
     <h2>This is our London.</h2>
     <p>We’re neighbours, shopkeepers, makers and people with an idea and a friend willing to help. Some of us grew up on these streets. Some of us are still learning the bus routes.</p>
     <blockquote>One of us pulled up a chair. The rest of us made room.</blockquote>
+    <details id="community">
+      <summary>Meet the Community</summary>
+      <article class="community-card">
+        <h3>MA Chess Academy</h3>
+        <p>Muddasir offers independent chess lessons online and in person in Wembley. His PhD research focuses on entrepreneurship and how small and medium-sized businesses expand internationally.</p>
+        <p><a href="https://ma-chess-academy.officialfriend.co.uk/">Visit MA Chess Academy</a> · <a href="https://ma-chess-academy.officialfriend.co.uk/#about">Read about Muddasir’s PhD research</a></p>
+      </article>
+    </details>
   </article>
   <article id="london-organisers">
     <h2>Back the people who bring London together.</h2>
@@ -191,23 +199,6 @@
     <a class="action" href="solutions.html">Solutions</a>
   </div>
 </section>
-<section id="community" aria-labelledby="community-title">
-  <h2 id="community-title">Meet the Community</h2>
-  <p>Meet the people and groups we work with in London.</p>
-  <div class="community-grid">
-    <article class="community-card">
-      <h3>RBKC Chess Community</h3>
-      <p>Join a friendly Tuesday chess session at The Conversation Corner. Beginners are welcome.</p>
-      <a href="https://rbkc-chess.co.uk/">Find a chess session</a>
-    </article>
-    <article class="community-card">
-      <h3>Muddasir · MA Chess Academy</h3>
-      <p>Meet an independent chess tutor offering online and in-person lessons in Wembley.</p>
-      <a href="https://tutorperch.com/t/mr-a-72cn">View Muddasir’s tutor profile</a>
-    </article>
-  </div>
-</section>
-
 </main>
 <footer style="border-top:2px solid #D42E22;padding-top:24px;color:#D9E4DC;font-size:14px"><div class="footer-brand"><img class="section-lantern" src="lantern-logo.png" alt="" width="34" height="34" loading="lazy"><span>The Official Friend &copy; 2026</span></div></footer>
 </div>
