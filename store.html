@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Store | The Official Friend</title>
 <meta name="theme-color" content="#0f2a22">
+<link rel="stylesheet" href="official-friend-editorial.css">
 <style>*{box-sizing:border-box}body{margin:0;font:17px/1.55 system-ui,sans-serif;color:#172721;background:#fffaf0}header,main{max-width:1120px;margin:auto;padding:24px}header{border-bottom:1px solid #b4bcb2}a{color:inherit}header a{font-weight:800;text-decoration:none}main{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}figure{margin:0}img{width:100%;display:block;background:white;border-radius:16px}figcaption,small{font-size:.88rem}h1{font:600 clamp(2.5rem,5vw,4.5rem)/1 Georgia,serif;letter-spacing:-.045em;margin:.35em 0}h2{font-size:1.2rem}button,.pay{background:#193b30;color:white;border:0;border-radius:8px;padding:.85em 1.25em;font:inherit;cursor:pointer}select{padding:.6em;font:inherit;margin:.5em 0}section{border-top:1px solid #b4bcb2;margin-top:1.4rem;padding-top:.5rem}#credit{overflow-wrap:anywhere}@media(max-width:690px){main{grid-template-columns:1fr}img{max-height:48vh;object-fit:contain}}.jacket-gallery img{height:auto}.jacket-gallery figcaption{margin-top:.75rem;font-weight:650}.jacket-swatches{display:flex;gap:12px;margin-top:.5rem}.jacket-swatches button{background:var(--swatch);width:44px;height:44px;padding:0;border:1px solid #817d73;border-radius:50%}.jacket-swatches button[aria-pressed="true"]{outline:2px solid #193b30;outline-offset:3px}.project-dialog{width:min(36rem,calc(100% - 2rem));max-height:calc(100dvh - 2rem);overflow:auto;border:1px solid #b4bcb2;border-radius:16px;padding:clamp(1rem,4vw,2rem);background:#fffaf0;color:#172721}.project-dialog::backdrop{background:rgba(15,42,34,.62)}.project-poll{margin:0}.project-poll h3{margin:0 0 .75rem}.project-actions{display:flex;flex-wrap:wrap;gap:.6rem}.project-actions .project-dismiss{background:transparent;color:#193b30;border:1px solid currentColor}.project-poll [role=status]:empty{margin:0}.project-poll fieldset{border:0;padding:0;margin:0 0 1rem;min-width:0}.project-poll legend{padding:0;margin-bottom:.5rem}.project-poll label:not([hidden]){display:flex;align-items:baseline;gap:.6rem;padding:.4rem 0}.project-poll label:has(textarea):not([hidden]){display:block}.project-poll textarea{display:block;width:100%;font:inherit}.project-poll button:disabled{opacity:.65;cursor:default}
 .campaign{grid-column:1/-1;margin:0;padding:clamp(20px,4vw,42px);border:0;border-radius:18px;background:#193b30;color:#fffaf0}.campaign-label{margin:0;color:#f3cf83;font-size:.8rem;font-weight:750;letter-spacing:.09em;text-transform:uppercase}.campaign h2{font:600 clamp(2.35rem,6vw,4.8rem)/1.04 Georgia,serif;margin:.2em 0}.campaign-intro{margin:0 0 1.4rem;font-size:clamp(1rem,2vw,1.3rem)}.campaign-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0}.campaign-steps li{overflow:hidden;border-radius:9px;background:#fffaf0;color:#172721}.campaign-panel{overflow:hidden;aspect-ratio:1}.campaign-panel img{width:300%;max-width:none;height:auto;max-height:none;display:block;object-fit:fill;border-radius:0;transform:translateX(calc(var(--offset) / 3))}.campaign-caption{padding:14px}.campaign-caption h3,.campaign-caption p{margin:0}.campaign-caption p{margin-top:.35rem}.campaign-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:1.25rem}.campaign-footer a{background:#f3cf83;color:#172721;padding:.55rem .9rem;border-radius:6px;font-weight:750}@media(max-width:690px){.campaign-steps{grid-template-columns:1fr}.campaign-panel{max-width:320px;margin:auto}}
 
@@ -53,8 +54,8 @@
   .shelf-bay .jacket-gallery img { max-height:none; border-radius:7px; }
   #jacket-details { padding:clamp(14px,3vw,28px); border-radius:10px; background:#fffaf0; }
   .jacket-intro { padding:0; background:transparent; color:#172721; }
-  .jacket-intro h3 { margin:0 0 .8rem; font:600 clamp(1.85rem,4.5vw,3.5rem)/1 Georgia,serif; letter-spacing:-.035em; }
-  .jacket-intro h3 span { display:block; margin-top:.5rem; color:#4f645b; font:700 .78rem/1.35 system-ui,sans-serif; letter-spacing:.09em; text-transform:uppercase; }
+  .jacket-intro h2 { margin:0 0 .8rem; font:600 clamp(1.85rem,4.5vw,3.5rem)/1 Georgia,serif; letter-spacing:-.035em; }
+  .jacket-intro h2 span { display:block; margin-top:.5rem; color:#4f645b; font:700 .78rem/1.35 system-ui,sans-serif; letter-spacing:.09em; text-transform:uppercase; }
   .jacket-specs { border:1px solid #ded4bf; border-radius:8px; font-size:.9rem; }
   .shop-main a:focus-visible,.shop-header a:focus-visible,.shop-main button:focus-visible,.shop-main summary:focus-visible { outline:3px solid #bf8c37; outline-offset:4px; }
   .maker-bay { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; color:#172721; background:#f2e9d6; border-color:#ccb894; }
@@ -65,19 +66,40 @@
     .shop-header,.shop-main { padding-inline:16px; }
     .shelf-bay { grid-template-columns:minmax(0,1fr); }
   }
+
+  .shop-main { gap:clamp(16px,3vw,30px); }
+  .shop-intro h1 { font-size:clamp(2.65rem,6vw,4.6rem); }
+  .shop-header .site-menu a { font-weight:650; }
+  .jacket-intro h2 { font-size:clamp(1.65rem,3.5vw,2.65rem); }
+  .jacket-care { margin-top:.65rem; padding:.05rem .75rem; border:1px solid #ded4bf; border-radius:8px; }
+  .jacket-care summary,.shop-experiment summary { align-content:center; min-height:44px; cursor:pointer; }
+  .jacket-care > p { margin:.25rem 0 .85rem; }
+  .shop-experiment { padding:clamp(10px,2.5vw,24px); }
+  .shop-experiment summary { font-weight:750; color:#f3cf83; }
+  .shop-experiment[open] summary { margin-bottom:.6rem; }
+  .shop-header .site-menu summary:focus-visible { outline:3px solid #f2c14e; outline-offset:4px; }
 </style></head>
 <body>
 <header class="shop-header">
   <a class="shop-brand" href="/"><img src="lantern-logo.png" width="46" height="46" alt="">THE OFFICIAL FRIEND</a>
-  <a class="shop-contact" href="#sell-with-us">Sell with us</a>
+  <details class="site-menu">
+    <summary>Menu <span aria-hidden="true"></span></summary>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="campaigns.html">Campaigns</a>
+      <a href="store.html" aria-current="page">Store</a>
+      <a href="people.html">People</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="contact.html">Contact</a>
+      <a href="#sell-with-us">Sell with us</a>
+    </nav>
+  </details>
 </header>
 <main class="shop-main">
   <div class="shop-intro">
-    <h1>The Official Friend Store</h1>
-    <p>A shop for products from Official Friend and independent makers.</p>
+    <h1>Store</h1>
   </div>
-  <section class="shop-shelf" aria-labelledby="on-the-shelf">
-    <h2 id="on-the-shelf">On the shelf</h2>
+  <section class="shop-shelf" aria-label="On the shelf">
     <div class="shelf-bay">
 
 <figure class="jacket-gallery">
@@ -90,20 +112,20 @@
 </figure>
 <article id="jacket-details">
   <div class="jacket-intro">
-    <h3>Marketing Genius or Evil Scientist? <span>Track Jacket</span></h3>
+    <h2>Marketing Genius or Evil Scientist? <span>Track Jacket</span></h2>
   </div>
   <div class="jacket-specs">
     <p><strong>Sizes</strong> XS–2XL</p>
     <p><strong>Made to order</strong> Estimated UK delivery is 8–16 days from the date you order.</p>
   </div>
-  <p class="jacket-description">A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p>
   <section><p id="credit">Referred by The Official Friend</p><div id="live"><p>Secure checkout is available for UK orders.</p></div><h2 id="title">Order your jacket</h2><div id="flow"></div><noscript>Enable JavaScript to continue to secure checkout.</noscript></section>
-  <div class="jacket-referrals">
-    <h2>How jacket referrals work</h2>
+  <details class="jacket-care jacket-referrals">
+    <summary>How jacket referrals work</summary>
     <p>When you buy through an ambassador’s referral link, the ambassador earns <strong>70%</strong> of the sale margin after costs. Official Friend keeps the remaining <strong>30%</strong>.</p>
-  </div>
+  </details>
   <details class="jacket-care">
-    <summary>Fabric, sizes and care</summary>
+    <summary>Jacket details and care</summary>
+  <p class="jacket-description">A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p>
     <p>Main fabric is 61.9% cotton and 38.1% polyester. Contrast panels are polyester. Sizes XS–2XL. Machine wash gently at 30°C.</p>
   </details>
 
@@ -121,9 +143,9 @@
     </div>
     <div class="shelf-edge" aria-hidden="true"></div>
   </section>
-<section id="experiment-001" class="campaign" aria-labelledby="experiment-heading">
+<details id="experiment-001" class="campaign shop-experiment">
+  <summary>How to use your jacket</summary>
   <p class="campaign-label">Official Friend · Experiment 001</p>
-  <h2 id="experiment-heading">How to use your jacket</h2>
   <p class="campaign-intro">Can one line of clothing create more meaningful interactions?</p>
   <ol class="campaign-steps">
     <li>
@@ -141,7 +163,7 @@
   </ol>
   <p><small>The QR code shown is a mockup. Where it leads can vary.</small></p>
   <div class="campaign-footer"><em>Brought to you by the power of friendship.</em><a href="#jacket-details">See the jacket</a></div>
-</section>
+</details>
 </main>
 <template id="project-poll">
   <dialog class="project-dialog" aria-labelledby="project-poll-title">
