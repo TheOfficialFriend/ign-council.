@@ -5,318 +5,43 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0F2A22">
 <title>The Official Friend | AI-driven creative community agency for London</title>
-<meta name="description" content="The Official Friend is an AI-driven creative community agency in London. Explore our campaigns, shop the store and meet our community.">
+<meta name="description" content="Explore our campaigns, shop the store and meet our community.">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap">
-<style>
-  * { box-sizing: border-box; }
-  body { margin: 0; background: #0f2a22; line-height: 1.55; }
-  h1, h2, h3 { text-wrap: balance; }
-  a, button { -webkit-tap-highlight-color: transparent; }
-  .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
-  .section-lantern { display: block; width: 48px; height: 48px; object-fit: contain; border-radius: 50%; }
-  .footer-brand { display: flex; align-items: center; gap: 12px; }
-  .footer-brand .section-lantern { width: 34px; height: 34px; }
-  .brand img { display: block; width: 50px; height: 50px; object-fit: contain; border-radius: 50%; }
-  .header-link { color: #fff4dc; font-weight: 600; text-underline-offset: .3em; }
-  .hero-quote { border-left: 4px solid #f2c14e; }
-  .campaign-card { border: 1px solid #2c5446; }
-  #jumper {
-    padding: clamp(24px, 5vw, 56px);
-    background: #0a0a0a;
-    color: #f2efe8;
-    border-radius: 20px;
-    border-top: 4px solid #d42e22;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  #jumper {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background: radial-gradient(ellipse at 14% 6%, #25221e 0%, #11100f 46%, #0a0a0a 83%);
-  }
-  #jumper::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-      radial-gradient(circle, #f2efe8 0.45px, transparent 0.85px),
-      radial-gradient(circle, #f2efe8 0.35px, transparent 0.8px),
-      repeating-linear-gradient(102deg, transparent 0 6px, #ccae83 7px 8px, transparent 9px 15px);
-    background-size: 5px 7px, 11px 13px, auto;
-    background-position: 0 0, 2px 3px, 0 0;
-    opacity: .085;
-  }
-  .jumper-description {
-    margin: 0;
-    max-width: 46ch;
-    color: #f2efe8;
-    font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
-    line-height: 1.65;
-  }
-  #jumper { display:grid; gap:clamp(26px,4vw,48px); align-items:center; grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr); }
-  .jacket-referrals { padding:14px 16px; border-left:4px solid #f2c14e; border-radius:0 10px 10px 0; background:#16382e; color:#fff4dc; }
-  .jacket-referrals h2 { margin:0 0 5px; font-size:1rem; }
-  .jacket-referrals p { margin:0; font-size:1rem; }
-  .jacket-referrals strong { color:#f2c14e; }
-  .campaign-jackets,.campaign-copy { min-width:0; display:flex; flex-direction:column; gap:20px; }
-  #jumper .london-headline { margin:0; color:#f2efe8; font:600 clamp(2.5rem,5.3vw,4.7rem)/.99 Newsreader,Georgia,serif; letter-spacing:-.035em; text-wrap:balance; }
-  @media(max-width:740px) { .campaign-copy { grid-row:1; } }
-  #jumper .jumper-title {
-    margin: 0;
-    font: 600 clamp(1.85rem, 3.3vw, 3.2rem)/1 Newsreader, Georgia, serif;
-    text-transform: uppercase;
-  }
-  .jumper-title em {
-    display: block;
-    margin-top: .15em;
-    font: italic 600 1.16em/.9 Newsreader, Georgia, serif;
-    text-transform: none;
-    color: #ff654f;
-  }
-  #jumper .jumper-panel {
-    min-width: 0;
-    min-height: 250px;
-    justify-content: center;
-    border: 1px solid #585650;
-    border-radius: 0;
-  }
-  #jumper .jumper-panel { background: #080807 !important; }
-  @media (prefers-reduced-motion: no-preference) {
-    #jumper .jumper-panel {
-      animation: jumper-settle 700ms ease-out;
-      transition: transform 260ms ease, box-shadow 260ms ease;
-    }
-    @keyframes jumper-settle {
-      0% { transform: perspective(900px) rotateY(-8deg) rotateX(4deg); }
-      65% { transform: perspective(900px) rotateY(3deg); }
-      100% { transform: perspective(900px) rotateY(0); }
-    }
-  }
-  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-    #jumper .jumper-panel:hover {
-      transform: perspective(900px) rotateY(-7deg) rotateX(4deg) translateY(-4px);
-      box-shadow: 14px 16px 30px rgb(0 0 0 / 40%);
-    }
-  }
-  .jumper-panel .jumper-choices { flex-wrap: wrap; justify-content: center; }
-  .reveal .action:first-child { background: #0f2a22; border-color: #0f2a22; color: #fff4dc; }
-  .reveal .action:hover { text-decoration: none; box-shadow: inset 0 -3px currentColor; }
-  @media (max-width: 740px) {
-    #jumper { grid-template-columns: minmax(0, 1fr); gap: 26px !important; }
-    #jumper .jumper-panel { min-height: 210px; }
-    .reveal .actions { display: grid; }
-    .reveal .action { justify-content: center; text-align: center; }
-  }
-  a:focus-visible { outline: 3px solid #f2c14e; outline-offset: 4px; }
-  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-  .action { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 2px solid; border-radius: 10px; color: #0f2a22; font-weight: 650; }
-  .action:focus-visible { outline-color: #0f2a22; }
-  #jumper .jacket-display { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-content:center; align-items:start; gap:clamp(8px,2vw,20px); padding:clamp(10px,2vw,22px); border-radius:20px; }
-  .jacket-display figure { margin:0; display:grid; gap:.5rem; text-align:center; font-weight:700; color:#fff4dc; }
-  .jacket-display img { display:block; width:100%; height:auto; border-radius:10px; background:#fff; }
-  .london-deck { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); background:#17382e; color:#fff4dc; border:1px solid #476253; border-radius:22px; overflow:hidden; }
-  .london-deck-body { min-width:0; padding:clamp(22px,4.5vw,52px); background:radial-gradient(ellipse at top left,#284a39,transparent 72%); }
-  .london-deck-controls:not([hidden]) { display:flex; flex-wrap:wrap; gap:.45rem; margin-bottom:clamp(24px,4vw,42px); }
-  .london-deck-controls button { font:inherit; font-size:.9rem; font-weight:700; color:inherit; background:#102c24; border:1px solid #52705f; border-radius:999px; padding:.55rem .85rem; cursor:pointer; }
-  .london-deck-controls button[aria-pressed="true"] { background:#f2c14e; border-color:#f2c14e; color:#0f2a22; }
-  .london-deck :is(a,button,summary):focus-visible { outline:2px solid #fff4dc; outline-offset:4px; }
-  .london-deck h2 { margin:0; max-width:13ch; font:600 clamp(2.65rem,5.9vw,5rem)/.94 Newsreader,Georgia,serif; letter-spacing:-.045em; text-wrap:balance; }
-  .london-deck p,.london-deck li { max-width:59ch; }
-  .london-deck ul { padding-left:1.15rem; }
-  .london-deck li + li { margin-top:.5rem; }
-  .london-deck blockquote { margin:1.3rem 0 0; padding:.1rem 0 .1rem 1rem; border-left:2px solid #f2c14e; color:#ffe2a1; font:500 clamp(1.35rem,2.4vw,2rem)/1.12 Newsreader,Georgia,serif; text-wrap:pretty; }
-  .london-deck a { color:#f2c14e; font-weight:700; text-underline-offset:.2em; }
-  .london-deck-body > article + article:not([hidden]) { margin-top:1.5rem; }
-  .london-photo { position:relative; display:grid; align-content:end; isolation:isolate; min-height:100%; margin:0; background:#254435; }
-  .london-photo::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(transparent 50%,rgba(8,24,19,.9)); }
-  .london-photo img { position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover; }
-  .london-photo figcaption { padding:1.25rem; color:#fff4dc; font-size:.9rem; font-weight:700; }
-  #community { margin-top:1.5rem; padding-top:1rem; border-top:1px solid #547062; }
-  #community summary { cursor:pointer; width:fit-content; font-weight:700; }
-  .community-card { margin-top:.8rem; padding:1rem; background:#102c24; border:1px solid #547062; border-radius:12px; }
-  .community-card h3 { margin:0; font-size:1.15rem; }
-  .community-card p { margin:.6rem 0; }
-  .community-links { display:flex; flex-wrap:wrap; gap:.45rem 1rem; }
-  @media (max-width:760px) {
-    .london-deck { grid-template-columns:1fr; }
-    .london-photo { min-height:clamp(190px,53vw,350px); }
-  }
-  .agency-hero { padding-block:clamp(2rem,7vw,5rem); border-block:1px solid #31564b; }
-  .agency-hero h1 { margin:0; max-width:15ch; font:600 clamp(2.85rem,8vw,6.4rem)/.98 Newsreader,Georgia,serif; letter-spacing:-.045em; }
-  .agency-intro { max-width:56ch; color:#d9e4dc; font-size:clamp(1.05rem,2.6vw,1.35rem); }
-  .friendship,.section-label { color:#f2c14e; font-weight:700; }
-  .agency-actions { margin-top:1.25rem; }
-  .agency-actions .action { color:#fff4dc; border-color:#9eb5a7; min-height:44px; text-decoration:none; }
-  .agency-actions .primary-action { background:#f2c14e; color:#0f2a22; border-color:#f2c14e; }
-  .campaigns { display:grid; gap:1.25rem; }
-  .campaigns h2,.research h3,.blue-book h4 { margin:0; font:600 clamp(2.5rem,5.5vw,4.4rem)/1 Newsreader,Georgia,serif; letter-spacing:-.03em; }
-  .research { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:clamp(1.5rem,5vw,4rem); padding:clamp(1.25rem,5vw,3rem); background:#16382e; border:1px solid #31564b; border-radius:20px; }
-  .research-copy p:not(.section-label) { max-width:56ch; color:#d9e4dc; }
-  .section-label { margin:0 0 .75rem; font-size:.78rem; letter-spacing:.09em; text-transform:uppercase; }
-  .blue-book { display:flex; flex-direction:column; justify-content:space-between; gap:1.5rem; padding:clamp(1.25rem,4vw,2.5rem); color:white; background:#164a91; border:1px solid #aabfdf; border-left:8px solid white; }
-  .blue-book .section-label { color:white; }
-  .blue-book img { border-radius:50%; margin-bottom:.75rem; }
-  .blue-book p { margin-bottom:0; }
-  .book-publisher { padding-top:.75rem; border-top:1px solid #aabfdf; }
-  #jumper .jacket-hook { margin:0; font:600 clamp(1.5rem,3vw,2.5rem)/1.05 Newsreader,Georgia,serif; }
-  #jumper .jacket-referrals h4 { margin:0 0 5px; font-size:1rem; }
-  #how { scroll-margin-top:1rem; }
-  @media(max-width:740px) { .research { grid-template-columns:1fr; } }
-</style>
+<link rel="stylesheet" href="official-friend-editorial.css">
 </head>
 <body>
 <div style="background:#0F2A22;color:#FFF4DC;font-family:system-ui,sans-serif;box-sizing:border-box;display:flex;flex-direction:column;align-items:center">
 <div style="width:100%;max-width:1120px;box-sizing:border-box;padding:0 24px;display:flex;flex-direction:column;gap:clamp(24px,4vw,44px);padding-bottom:64px">
-<header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><nav aria-label="Main navigation" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="header-link" href="#campaigns">Campaigns</a><a class="header-link" href="store.html">Store</a><a class="header-link" href="solutions.html">Solutions</a><a class="header-link" href="#how">Our London</a><a class="header-link" href="contact.html">Contact</a></nav></header>
-<main style="display:grid;gap:clamp(52px,8vw,88px)">
-<section class="agency-hero" aria-labelledby="agency-title">
-  <h1 id="agency-title">An AI-driven creative community agency for London.</h1>
-  <p class="agency-intro">From Kensington and Chelsea, we build websites and creative campaigns with London’s independent businesses, makers and community organisers.</p>
+<header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" data-referral-link href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><nav aria-label="Main navigation" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="header-link" href="solutions.html">Solutions</a><a class="header-link" href="contact.html">Contact</a></nav></header>
+<main class="landing">
+  <h1>An AI-driven creative community agency for London.</h1>
   <p class="friendship">Brought to you by the power of friendship.</p>
-  <nav class="actions agency-actions" aria-label="Explore Official Friend">
-    <a class="action primary-action" href="#campaigns">Explore our campaigns</a>
-    <a class="action" href="store.html">Check the store</a>
-    <a class="action" href="#how">Meet our people</a>
+  <nav class="landing-links" aria-label="Explore Official Friend">
+    <a data-referral-link href="campaigns.html">Explore our campaigns <span aria-hidden="true">→</span></a>
+    <a data-referral-link href="store.html">Check the store <span aria-hidden="true">→</span></a>
+    <a data-referral-link href="people.html">Meet our people <span aria-hidden="true">→</span></a>
   </nav>
-</section>
-<section id="campaigns" class="campaigns" aria-labelledby="campaigns-title">
-  <h2 id="campaigns-title">Our campaigns</h2>
-  <article class="research" aria-labelledby="research-title">
-    <div class="research-copy">
-      <p class="section-label">Independent research · Kensington &amp; Chelsea</p>
-      <h3 id="research-title">The Unseen Economy</h3>
-      <p>We’re exploring how older independent business owners in the Royal Borough of Kensington and Chelsea use digital tools, where they run into barriers, and what support would make a difference.</p>
-      <p>We want to hear directly from owners and learn where practical help, from building a first website to improving an existing one, can help customers find them online.</p>
-      <div class="actions agency-actions">
-        <a class="action primary-action" href="mailto:officialfriend@duck.com?subject=The%20Unseen%20Economy">Get in touch about the research</a>
-        <a class="action" href="solutions.html">Explore website and digital support</a>
-      </div>
-    </div>
-    <aside class="blue-book" aria-labelledby="blue-book-title">
-      <p class="section-label">Proposed independent report</p>
-      <div><img src="lantern-logo.png" width="44" height="44" alt=""><h4 id="blue-book-title">The Blue Book</h4><p>The Unseen Economy</p></div>
-      <p class="book-publisher">The Official Friend<br>Kensington &amp; Chelsea</p>
-    </aside>
-  </article>
-<section id="jumper" aria-labelledby="jacket-title">
-<div class="campaign-jackets">
-<h3 id="jacket-title" class="jumper-title">Marketing Genius <em>or Evil Scientist?</em></h3>
-<div class="jumper-panel jacket-display">
-  <figure><img src="jacket-cream-navy.webp" width="1400" height="1400" alt="Cream and navy track jacket, front view"><figcaption>The Genius</figcaption></figure>
-  <figure><img src="jacket-red-cream.webp" width="1400" height="1400" alt="Red and cream track jacket, front view"><figcaption>The Scientist</figcaption></figure>
-</div>
-</div>
-<div class="campaign-copy"><p class="jacket-hook">We put a question on a jacket.</p><p id="jacket-referral" hidden style="margin:0;color:#f2c14e">You found Leo’s jacket · Official Friend No. 001</p><p class="jumper-description">Wear it. Get asked. Start talking. A simple way to give Londoners a reason to say hello.</p><p class="jumper-description">Official Friend is an AI-powered creative agency based in Kensington and Chelsea. We build websites, booking systems and campaigns for London’s independent businesses, creatives and community organisations.</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p><div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="store.html">See the jackets</a><a class="action" style="color:#fff4dc;border-color:#fff4dc;text-decoration:none" href="contact.html">Start a project</a></div>
-  <div class="jacket-referrals">
-    <h4>How jacket referrals work</h4>
-    <p>When you buy through an ambassador’s referral link, the ambassador earns <strong>70%</strong> of the sale margin after costs. Official Friend keeps the remaining <strong>30%</strong>.</p>
-  </div>
-</div>
-</section>
-</section>
-<section id="how" class="london-deck" aria-label="Meet our people and explore London projects">
-  <div class="london-deck-body">
-  <div class="london-deck-controls" hidden role="group" aria-label="Explore London projects">
-    <button type="button" aria-controls="london-story" aria-pressed="true">Our London</button>
-    <button type="button" aria-controls="london-organisers" aria-pressed="false">The organisers</button>
-    <button type="button" aria-controls="london-projects" aria-pressed="false">Project ideas</button>
-  </div>
-  <article id="london-story">
-    <h2>Meet our people.</h2>
-    <p>We’re neighbours, shopkeepers, makers and people with an idea and a friend willing to help. Some of us grew up on these streets. Some of us are still learning the bus routes.</p>
-    <blockquote>One of us pulled up a chair. The rest of us made room.</blockquote>
-    <details id="community" open>
-      <summary>Meet the Official Friend Community</summary>
-      <article class="community-card">
-        <h3>MA Chess Academy</h3>
-        <p>Muddasir offers independent chess lessons online and in person in Wembley. His PhD research focuses on entrepreneurship and how small and medium-sized businesses expand internationally.</p>
-        <p class="community-links"><a href="https://officialfriend-ma-chess-academy.pages.dev/">Visit MA Chess Academy</a> <a href="https://officialfriend-ma-chess-academy.pages.dev/#about">Read about Muddasir’s PhD research</a></p>
-      </article>
-      <article class="community-card">
-        <h3>Armstrong</h3>
-        <p>Meet Anderson Armstrong, a poet and chess coach. Explore his book <em>Calypso and Pan</em>, his creative work and his involvement in community chess.</p>
-        <p class="community-links"><a href="https://officialfriend-armstrong.pages.dev/">Visit Armstrong’s page</a></p>
-      </article>
-    </details>
-  </article>
-  <article id="london-organisers">
-    <h2>Back the people who bring London together.</h2>
-    <p>Community organisers are already making space for people to meet, from chess meetups to yoga sessions. Official Friend helps them tell their stories and reach people who might otherwise never hear about them.</p>
-    <blockquote>If someone asks about the jacket, try “It’s from Official Friend. We’re helping Londoners find more reasons to meet. What would you like to see in your neighbourhood?”</blockquote>
-  </article>
-  <article id="london-projects">
-    <h2>What should London try next?</h2>
-    <ul>
-      <li><strong>Grow Up, London</strong> · A neighbourhood vertical farm growing fresh food close to home.</li>
-      <li><strong>Checkmate Chemistry</strong> · A chess dating app with real-life meetups.</li>
-      <li><strong>The Friend Table</strong> · A supper club where you can book one seat and meet five new people.</li>
-    </ul>
-    <p>Pick up to two ideas you’d like us to explore, or share one of your own.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfltLNjs_zfvTspbcXi3rhtjVP68V2a4AfzMH1Mbvk0vVTfIw/viewform?usp=header">Vote for a London project</a>
-  </article>
-  </div>
-  <figure class="london-photo">
-    <img src="https://images.unsplash.com/photo-1670543423116-9f827e86b14f?auto=format&amp;fit=crop&amp;w=1000&amp;q=82" width="1000" height="750" loading="lazy" decoding="async" alt="Shoppers filling Portobello Road Market">
-    <figcaption><a href="https://unsplash.com/photos/a-crowd-of-people-in-a-street-2AA-aU58l2E">Portobello Road</a> · Sebastian Mellen</figcaption>
-  </figure>
-</section>
-
-<section id="services" aria-labelledby="services-title" style="display:flex;flex-direction:column;gap:22px">
-  <div><p style="color:#f2c14e;letter-spacing:.16em;font-size:.8rem;font-weight:700;text-transform:uppercase;margin:0 0 8px">What we build</p>
-  <h2 id="services-title" style="font:600 clamp(2.4rem,5vw,3.5rem)/1.1 Newsreader,Georgia,serif;margin:0">Our mission</h2>
-  <p style="color:#d9e4dc;max-width:65ch">We help people, businesses and organisations establish their digital presence, communicate their ideas and connect with wider audiences. We want every project to become an opportunity to connect people.</p>
-  <p style="color:#d9e4dc;max-width:65ch">We build websites, tell stories through creative campaigns, help people find collaborators through our community network, and bring people, businesses and communities together through events and partnerships.</p></div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
-    <article class="campaign-card" style="background:#16382e;border-radius:14px;padding:24px"><h3 style="font:600 1.65rem Newsreader,Georgia,serif;margin:0 0 10px">Websites &amp; landing pages</h3><p style="margin:0;color:#d9e4dc">Clear, mobile-friendly sites designed around your identity and your customers' needs.</p></article>
-    <article class="campaign-card" style="background:#16382e;border-radius:14px;padding:24px"><h3 style="font:600 1.65rem Newsreader,Georgia,serif;margin:0 0 10px">Booking &amp; customer systems</h3><p style="margin:0;color:#d9e4dc">Practical CRM, appointment and catalogue workflows that reduce everyday admin.</p></article>
-    <article class="campaign-card" style="background:#16382e;border-radius:14px;padding:24px"><h3 style="font:600 1.65rem Newsreader,Georgia,serif;margin:0 0 10px">Brand &amp; creative campaigns</h3><p style="margin:0;color:#d9e4dc">Positioning, storytelling and AI-assisted creative concepts that help a business stand out.</p></article>
-    <article class="campaign-card" style="background:#16382e;border-radius:14px;padding:24px"><h3 style="font:600 1.65rem Newsreader,Georgia,serif;margin:0 0 10px">Training &amp; handover</h3><p style="margin:0;color:#d9e4dc">Tools that you can manage yourself, with practical support tailored to your needs.</p></article>
-  </div>
-  <div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="solutions.html">View all solutions</a></div>
-</section>
-<section class="reveal" aria-labelledby="approach-title" style="background:#F2C14E;color:#0F2A22;border-radius:20px;padding:clamp(22px,5vw,40px);display:flex;flex-direction:column;gap:16px">
-  <h2 id="approach-title" style="margin:0;font:600 clamp(2.1rem,4vw,3rem)/1.1 Newsreader,Georgia,serif">Let’s grow together. World domination can wait.</h2>
-  <p style="margin:0;font-size:1.125rem;max-width:65ch">Let’s get your idea in front of more people and build the tools to keep it growing.</p>
-  <p style="margin:0;font-size:1.125rem;max-width:65ch">We listen first, agree on what matters, build something useful, and show you how to run it. Our work is tailored to each project, with no pressure, no unnecessary extras, and no requirement for public credit.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;font-weight:650"><span>01 / Listen</span><span>02 / Build</span><span>03 / Handover</span><span>04 / Improve</span></div>
-  <div class="actions">
-    <a class="action" href="contact.html">Tell us what you’re building</a>
-    <a class="action" href="solutions.html">Solutions</a>
-  </div>
-</section>
 </main>
 <footer style="border-top:2px solid #D42E22;padding-top:24px;color:#D9E4DC;font-size:14px"><div class="footer-brand"><img class="section-lantern" src="lantern-logo.png" alt="" width="34" height="34" loading="lazy"><span>The Official Friend &copy; 2026</span></div></footer>
 </div>
 </div>
 <script>
-  const referral = new URLSearchParams(window.location.search).get('ref');
+  const referral = new URLSearchParams(location.search).get('ref');
   if (referral) {
-    for (const storeLink of document.querySelectorAll('a[href="store.html"]')) {
-      const destination = new URL(storeLink.href);
+    for (const link of document.querySelectorAll('[data-referral-link]')) {
+      const destination = new URL(link.href);
       destination.searchParams.set('ref', referral);
-      storeLink.href = destination.href;
+      link.href = destination.href;
     }
+    const badge = document.getElementById('jacket-referral');
+    if (badge && referral === 'MGES-001') badge.hidden = false;
   }
-
-  if (referral === 'MGES-001') {
-    document.getElementById('jacket-referral').hidden = false;
-  }
-
-  const deckControls = document.querySelector('.london-deck-controls');
-  const deckButtons = [...deckControls.querySelectorAll('button')];
-  function showLondonSlide(active) {
-    for (const button of deckButtons) {
-      const selected = button === active;
-      button.setAttribute('aria-pressed', String(selected));
-      document.getElementById(button.getAttribute('aria-controls')).hidden = !selected;
-    }
-  }
-  for (const button of deckButtons) button.addEventListener('click', () => showLondonSlide(button));
-  showLondonSlide(deckButtons[0]);
-  deckControls.hidden = false;
+  const section = location.hash.slice(1);
+  const campaignSections = ['campaigns', 'campaigns-title', 'research-title', 'blue-book-title', 'jumper', 'jacket-title', 'jacket-referral'];
+  const peopleSections = ['how', 'community', 'london-story', 'london-organisers', 'london-projects', 'services', 'services-title', 'approach-title'];
+  if (campaignSections.includes(section)) location.replace('campaigns.html' + location.search + location.hash);
+  if (peopleSections.includes(section)) location.replace('people.html' + location.search + location.hash);
 </script>
 </body>
 </html>
