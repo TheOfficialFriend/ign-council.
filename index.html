@@ -53,8 +53,8 @@
     if (badge && referral === 'MGES-001') badge.hidden = false;
   }
   const section = location.hash.slice(1);
-  const campaignSections = ['campaigns', 'campaigns-title', 'research-title', 'blue-book-title', 'jumper', 'jacket-title', 'jacket-referral'];
-  const peopleSections = ['how', 'community', 'london-story', 'london-organisers', 'london-projects', 'services', 'services-title', 'approach-title'];
+  const campaignSections = ['campaigns', 'campaigns-title', 'research-title', 'blue-book-title', 'jumper', 'jacket-title', 'jacket-referral', 'london-projects'];
+  const peopleSections = ['how', 'community', 'london-story', 'london-organisers', 'services', 'services-title', 'approach-title'];
   if (campaignSections.includes(section)) location.replace('campaigns.html' + location.search + location.hash);
   if (peopleSections.includes(section)) location.replace('people.html' + location.search + location.hash);
 </script>

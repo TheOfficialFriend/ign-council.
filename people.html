@@ -59,7 +59,7 @@
       </article>
   </section>
   <div class="people-actions" id="london-organisers">
-    <span id="london-projects"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfltLNjs_zfvTspbcXi3rhtjVP68V2a4AfzMH1Mbvk0vVTfIw/viewform?usp=header">Vote for a London project</a></span>
+    
     <span id="services"><a id="services-title" href="solutions.html">Explore solutions</a></span>
     <a id="approach-title" href="contact.html">Get in touch</a>
   </div>
@@ -68,6 +68,10 @@
 </div>
 </div>
 <script>
+  if (location.hash === '#london-projects') {
+    location.replace('campaigns.html' + location.search + location.hash);
+  }
+
   const referral = new URLSearchParams(location.search).get('ref');
   if (referral) {
     for (const link of document.querySelectorAll('[data-referral-link]')) {
