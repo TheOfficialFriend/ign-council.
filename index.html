@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0F2A22">
-<title>Official Friend | AI-Powered Creative Agency for London</title>
-<meta name="description" content="You found us! Since you’re here, come take a closer look. We’re a London creative agency using AI to turn good ideas into campaigns worth talking about.">
+<title>The Official Friend | AI-driven creative community agency for London</title>
+<meta name="description" content="The Official Friend is an AI-driven creative community agency in London. Explore our campaigns, shop the store and meet our community.">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap">
 <style>
@@ -144,29 +144,80 @@
     .london-deck { grid-template-columns:1fr; }
     .london-photo { min-height:clamp(190px,53vw,350px); }
   }
+  .agency-hero { padding-block:clamp(2rem,7vw,5rem); border-block:1px solid #31564b; }
+  .agency-hero h1 { margin:0; max-width:15ch; font:600 clamp(2.85rem,8vw,6.4rem)/.98 Newsreader,Georgia,serif; letter-spacing:-.045em; }
+  .agency-intro { max-width:56ch; color:#d9e4dc; font-size:clamp(1.05rem,2.6vw,1.35rem); }
+  .friendship,.section-label { color:#f2c14e; font-weight:700; }
+  .agency-actions { margin-top:1.25rem; }
+  .agency-actions .action { color:#fff4dc; border-color:#9eb5a7; min-height:44px; text-decoration:none; }
+  .agency-actions .primary-action { background:#f2c14e; color:#0f2a22; border-color:#f2c14e; }
+  .campaigns { display:grid; gap:1.25rem; }
+  .campaigns h2,.research h3,.blue-book h4 { margin:0; font:600 clamp(2.5rem,5.5vw,4.4rem)/1 Newsreader,Georgia,serif; letter-spacing:-.03em; }
+  .research { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:clamp(1.5rem,5vw,4rem); padding:clamp(1.25rem,5vw,3rem); background:#16382e; border:1px solid #31564b; border-radius:20px; }
+  .research-copy p:not(.section-label) { max-width:56ch; color:#d9e4dc; }
+  .section-label { margin:0 0 .75rem; font-size:.78rem; letter-spacing:.09em; text-transform:uppercase; }
+  .blue-book { display:flex; flex-direction:column; justify-content:space-between; gap:1.5rem; padding:clamp(1.25rem,4vw,2.5rem); color:white; background:#164a91; border:1px solid #aabfdf; border-left:8px solid white; }
+  .blue-book .section-label { color:white; }
+  .blue-book img { border-radius:50%; margin-bottom:.75rem; }
+  .blue-book p { margin-bottom:0; }
+  .book-publisher { padding-top:.75rem; border-top:1px solid #aabfdf; }
+  #jumper .jacket-hook { margin:0; font:600 clamp(1.5rem,3vw,2.5rem)/1.05 Newsreader,Georgia,serif; }
+  #jumper .jacket-referrals h4 { margin:0 0 5px; font-size:1rem; }
+  #how { scroll-margin-top:1rem; }
+  @media(max-width:740px) { .research { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 <div style="background:#0F2A22;color:#FFF4DC;font-family:system-ui,sans-serif;box-sizing:border-box;display:flex;flex-direction:column;align-items:center">
 <div style="width:100%;max-width:1120px;box-sizing:border-box;padding:0 24px;display:flex;flex-direction:column;gap:clamp(24px,4vw,44px);padding-bottom:64px">
-<header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><nav aria-label="Main navigation" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="header-link" href="store.html">Store</a><a class="header-link" href="solutions.html">Solutions</a><a class="header-link" href="#how">Our London</a><a class="header-link" href="contact.html">Contact</a></nav></header>
+<header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><nav aria-label="Main navigation" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="header-link" href="#campaigns">Campaigns</a><a class="header-link" href="store.html">Store</a><a class="header-link" href="solutions.html">Solutions</a><a class="header-link" href="#how">Our London</a><a class="header-link" href="contact.html">Contact</a></nav></header>
 <main style="display:grid;gap:clamp(52px,8vw,88px)">
-<section id="jumper">
+<section class="agency-hero" aria-labelledby="agency-title">
+  <h1 id="agency-title">An AI-driven creative community agency for London.</h1>
+  <p class="agency-intro">From Kensington and Chelsea, we build websites and creative campaigns with London’s independent businesses, makers and community organisers.</p>
+  <p class="friendship">Brought to you by the power of friendship.</p>
+  <nav class="actions agency-actions" aria-label="Explore Official Friend">
+    <a class="action primary-action" href="#campaigns">Explore our campaigns</a>
+    <a class="action" href="store.html">Check the store</a>
+    <a class="action" href="#how">Meet our people</a>
+  </nav>
+</section>
+<section id="campaigns" class="campaigns" aria-labelledby="campaigns-title">
+  <h2 id="campaigns-title">Our campaigns</h2>
+  <article class="research" aria-labelledby="research-title">
+    <div class="research-copy">
+      <p class="section-label">Independent research · Kensington &amp; Chelsea</p>
+      <h3 id="research-title">The Unseen Economy</h3>
+      <p>We’re exploring how older independent business owners in the Royal Borough of Kensington and Chelsea use digital tools, where they run into barriers, and what support would make a difference.</p>
+      <p>We want to hear directly from owners and learn where practical help, from building a first website to improving an existing one, can help customers find them online.</p>
+      <div class="actions agency-actions">
+        <a class="action primary-action" href="mailto:officialfriend@duck.com?subject=The%20Unseen%20Economy">Get in touch about the research</a>
+        <a class="action" href="solutions.html">Explore website and digital support</a>
+      </div>
+    </div>
+    <aside class="blue-book" aria-labelledby="blue-book-title">
+      <p class="section-label">Proposed independent report</p>
+      <div><img src="lantern-logo.png" width="44" height="44" alt=""><h4 id="blue-book-title">The Blue Book</h4><p>The Unseen Economy</p></div>
+      <p class="book-publisher">The Official Friend<br>Kensington &amp; Chelsea</p>
+    </aside>
+  </article>
+<section id="jumper" aria-labelledby="jacket-title">
 <div class="campaign-jackets">
-<h2 class="jumper-title">Marketing Genius <em>or Evil Scientist?</em></h2>
+<h3 id="jacket-title" class="jumper-title">Marketing Genius <em>or Evil Scientist?</em></h3>
 <div class="jumper-panel jacket-display">
   <figure><img src="jacket-cream-navy.webp" width="1400" height="1400" alt="Cream and navy track jacket, front view"><figcaption>The Genius</figcaption></figure>
   <figure><img src="jacket-red-cream.webp" width="1400" height="1400" alt="Red and cream track jacket, front view"><figcaption>The Scientist</figcaption></figure>
 </div>
 </div>
-<div class="campaign-copy"><h1 class="london-headline">We put a question on a jacket.</h1><p id="jacket-referral" hidden style="margin:0;color:#f2c14e">You found Leo’s jacket · Official Friend No. 001</p><p class="jumper-description">Wear it. Get asked. Start talking. A simple way to give Londoners a reason to say hello.</p><p class="jumper-description">Official Friend is an AI-powered creative agency based in Kensington and Chelsea. We build websites, booking systems and campaigns for London’s independent businesses, creatives and community organisations.</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p><div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="store.html">See the jackets</a><a class="action" style="color:#fff4dc;border-color:#fff4dc;text-decoration:none" href="contact.html">Start a project</a></div>
+<div class="campaign-copy"><p class="jacket-hook">We put a question on a jacket.</p><p id="jacket-referral" hidden style="margin:0;color:#f2c14e">You found Leo’s jacket · Official Friend No. 001</p><p class="jumper-description">Wear it. Get asked. Start talking. A simple way to give Londoners a reason to say hello.</p><p class="jumper-description">Official Friend is an AI-powered creative agency based in Kensington and Chelsea. We build websites, booking systems and campaigns for London’s independent businesses, creatives and community organisations.</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p><div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" href="store.html">See the jackets</a><a class="action" style="color:#fff4dc;border-color:#fff4dc;text-decoration:none" href="contact.html">Start a project</a></div>
   <div class="jacket-referrals">
-    <h2>How jacket referrals work</h2>
+    <h4>How jacket referrals work</h4>
     <p>When you buy through an ambassador’s referral link, the ambassador earns <strong>70%</strong> of the sale margin after costs. Official Friend keeps the remaining <strong>30%</strong>.</p>
   </div>
 </div>
 </section>
-<section id="how" class="london-deck" aria-label="Official Friend’s London projects">
+</section>
+<section id="how" class="london-deck" aria-label="Meet our people and explore London projects">
   <div class="london-deck-body">
   <div class="london-deck-controls" hidden role="group" aria-label="Explore London projects">
     <button type="button" aria-controls="london-story" aria-pressed="true">Our London</button>
@@ -174,10 +225,10 @@
     <button type="button" aria-controls="london-projects" aria-pressed="false">Project ideas</button>
   </div>
   <article id="london-story">
-    <h2>This is our London.</h2>
+    <h2>Meet our people.</h2>
     <p>We’re neighbours, shopkeepers, makers and people with an idea and a friend willing to help. Some of us grew up on these streets. Some of us are still learning the bus routes.</p>
     <blockquote>One of us pulled up a chair. The rest of us made room.</blockquote>
-    <details id="community">
+    <details id="community" open>
       <summary>Meet the Official Friend Community</summary>
       <article class="community-card">
         <h3>MA Chess Academy</h3>
@@ -241,7 +292,16 @@
 </div>
 </div>
 <script>
-  if (new URLSearchParams(window.location.search).get('ref') === 'MGES-001') {
+  const referral = new URLSearchParams(window.location.search).get('ref');
+  if (referral) {
+    for (const storeLink of document.querySelectorAll('a[href="store.html"]')) {
+      const destination = new URL(storeLink.href);
+      destination.searchParams.set('ref', referral);
+      storeLink.href = destination.href;
+    }
+  }
+
+  if (referral === 'MGES-001') {
     document.getElementById('jacket-referral').hidden = false;
   }
 
