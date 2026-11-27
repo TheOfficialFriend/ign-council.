@@ -99,10 +99,15 @@
   .comic-split { display:grid; grid-template-columns:auto 1fr; column-gap:.45rem; align-items:center; font-size:clamp(.7rem,1.6vw,.95rem); }
   .comic-split strong { font:700 clamp(1.25rem,3vw,2.2rem)/1.1 Georgia,serif; }
   @media(max-width:690px) { .comic-art { max-width:320px; margin:auto; } }
+  .shop-header { flex-wrap:wrap; }
+  .shop-header-actions { display:flex; align-items:center; gap:clamp(.65rem,2vw,1.25rem); margin-inline-start:auto; }
+  .shop-header .shop-contact { color:#fff4dc; white-space:nowrap; text-decoration:underline; }
 </style></head>
 <body>
 <header class="shop-header">
   <a class="shop-brand" href="/"><img src="lantern-logo.png" width="46" height="46" alt="">THE OFFICIAL FRIEND</a>
+  <div class="shop-header-actions">
+  <a class="shop-contact" href="#sell-with-us">Sell with us</a>
   <details class="site-menu">
     <summary>Menu <span aria-hidden="true"></span></summary>
     <nav aria-label="Main navigation">
@@ -112,9 +117,9 @@
       <a href="people.html">People</a>
       <a href="solutions.html">Solutions</a>
       <a href="contact.html">Contact</a>
-      <a href="#sell-with-us">Sell with us</a>
     </nav>
   </details>
+  </div>
 </header>
 <main class="shop-main">
   <div class="shop-intro">
