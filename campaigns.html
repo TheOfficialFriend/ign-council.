@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0F2A22">
+<title>Campaigns | The Official Friend</title>
+<meta name="description" content="Explore The Unseen Economy and Official Friend’s creative campaigns.">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap">
+<link rel="stylesheet" href="official-friend-editorial.css">
+<style>
+  .campaign-disclosure { min-width:0; border:1px solid #537668; border-radius:20px; background:#16382e; }
+  #jumper.jacket-disclosure { display:block; padding:0; }
+  .campaign-disclosure summary { display:grid; gap:1rem; padding:clamp(16px,4vw,32px); cursor:pointer; list-style:none; }
+  .campaign-disclosure summary::-webkit-details-marker { display:none; }
+  .campaign-disclosure summary:hover .campaign-toggle { text-decoration:underline; }
+  .campaign-card-title { font:600 clamp(2rem,6vw,4rem)/1 Newsreader,Georgia,serif; text-wrap:balance; }
+  .campaign-card-title em { color:#ff8a78; }
+  .campaign-cover {
+    width:min(100%, 26rem); gap:clamp(1.1rem,4vw,2.4rem);
+    padding:clamp(19px,5vw,36px); background:#164a91;
+    border:1px solid #aabfdf; border-left:6px solid #f3f7ff;
+    box-shadow:inset 4px 0 #0e356d, 4px 5px #dce7f7, 6px 7px #5473a2;
+  }
+  .campaign-cover .section-label { font-size:.69rem; letter-spacing:.14em; }
+  .cover-title { display:grid; gap:.35rem; }
+  .cover-title strong { font:600 clamp(2.2rem,7vw,4rem)/.92 Newsreader,Georgia,serif; letter-spacing:-.035em; }
+  .cover-title > span { font:italic 600 clamp(1.1rem,4vw,1.45rem)/1.1 Newsreader,Georgia,serif; }
+  .book-publisher { font-size:.8rem; letter-spacing:.045em; }
+  .jacket-lookbook,.jacket-views { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .jacket-look,.jacket-views > span { display:grid; gap:.45rem; }
+  .jacket-views img { display:block; width:100%; height:auto; border-radius:8px; background:white; }
+  .jacket-views > span > span { font-size:.7rem; text-transform:uppercase; letter-spacing:.11em; color:#d9cfc3; }
+  .jacket-caption { display:grid; gap:.17rem; padding:.65rem 0 .25rem; border-top:1px solid #b28f65; }
+  .jacket-caption strong { font:600 clamp(1.5rem,5vw,2.1rem)/1 Newsreader,Georgia,serif; color:#fff4dc; }
+  .jacket-caption > span { color:#e7cda5; font-size:.8rem; }
+  @media(max-width:620px) { .jacket-lookbook { grid-template-columns:1fr; gap:1rem; } }
+  .campaign-toggle { color:#f2c14e; font-weight:700; }
+  .campaign-toggle::before { content:"Read about this campaign +"; }
+  details[open] .campaign-toggle::before { content:"Hide campaign details −"; }
+  .campaign-description { padding:clamp(16px,4vw,32px); border-top:1px solid #537668; }
+  .campaign-description > p:first-child { margin-top:0; }
+</style>
+</head>
+<body>
+<div style="background:#0F2A22;color:#FFF4DC;font-family:system-ui,sans-serif;box-sizing:border-box;display:flex;flex-direction:column;align-items:center">
+<div style="width:100%;max-width:1120px;box-sizing:border-box;padding:0 24px;display:flex;flex-direction:column;gap:clamp(24px,4vw,44px);padding-bottom:64px">
+<header style="display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px"><a class="brand" data-referral-link href="index.html" style="font-weight:700;letter-spacing:3px;font-size:14px;color:#F2C14E"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a><details class="site-menu">
+    <summary>Menu <span aria-hidden="true"></span></summary>
+    <nav aria-label="Main navigation">
+      <a data-referral-link href="index.html">Home</a>
+      <a data-referral-link aria-current="page" href="campaigns.html">Campaigns</a>
+      <a data-referral-link href="store.html">Store</a>
+      <a data-referral-link href="people.html">People</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </details></header>
+<main style="display:grid;gap:clamp(36px,6vw,68px)">
+<section id="campaigns" class="campaigns" aria-labelledby="campaigns-title">
+  <h1 id="campaigns-title" class="page-title">Our campaigns</h1>
+  <details class="campaign-disclosure research-disclosure">
+    <summary>
+      <span class="campaign-card-title" id="research-title">The Unseen Economy</span>
+      <span class="blue-book campaign-cover">
+      <span class="section-label">Proposed independent report</span>
+      <span class="cover-title"><img src="lantern-logo.png" width="44" height="44" alt=""><strong id="blue-book-title">The Blue Book</strong><span>The Unseen Economy</span></span>
+      <span class="book-publisher">The Official Friend<br>Kensington &amp; Chelsea</span>
+    </span>
+      <span class="campaign-toggle" aria-hidden="true"></span>
+    </summary>
+    <div class="research-copy campaign-description">
+      <p class="section-label">Independent research · Kensington &amp; Chelsea</p>
+      <p>We’re exploring how older independent business owners in the Royal Borough of Kensington and Chelsea use digital tools, where they run into barriers, and what support would make a difference.</p>
+      <p>We want to hear directly from owners and learn where practical help, from building a first website to improving an existing one, can help customers find them online.</p>
+      <div class="actions agency-actions">
+        <a class="action primary-action" href="mailto:officialfriend@duck.com?subject=The%20Unseen%20Economy">Get in touch about the research</a>
+        <a class="action" href="solutions.html">Explore website and digital support</a>
+      </div>
+    </div>
+  </details>
+  <details class="campaign-disclosure jacket-disclosure" id="jumper">
+    <summary>
+      <span class="campaign-card-title" id="jacket-title">Marketing Genius <em>or Evil Scientist?</em></span>
+      <span class="jacket-lookbook">
+        <span class="jacket-look">
+          <span class="jacket-views">
+            <span><img src="jacket-cream-navy.webp" width="1400" height="1400" alt="Cream and navy jacket from the front"><span>Front</span></span>
+            <span><img src="jacket-cream-navy-back.webp" width="1400" height="1400" alt="Cream and navy jacket from the back with lantern and QR artwork"><span>Back</span></span>
+          </span>
+          <span class="jacket-caption"><strong>The Genius</strong><span>Cream &amp; navy</span></span>
+        </span>
+        <span class="jacket-look">
+          <span class="jacket-views">
+            <span><img src="jacket-red-cream.webp" width="1400" height="1400" alt="Red and cream jacket from the front"><span>Front</span></span>
+            <span><img src="jacket-red-cream-back.webp" width="1400" height="1400" alt="Red and cream jacket from the back with lantern and QR artwork"><span>Back</span></span>
+          </span>
+          <span class="jacket-caption"><strong>The Scientist</strong><span>Red &amp; cream</span></span>
+        </span>
+      </span>
+      <span class="campaign-toggle" aria-hidden="true"></span>
+    </summary>
+    <div class="campaign-copy campaign-description"><p class="jacket-hook">We put a question on a jacket.</p><p id="jacket-referral" hidden style="margin:0;color:#f2c14e">You found Leo’s jacket · Official Friend No. 001</p><p class="jumper-description">Wear it. Get asked. Start talking. A simple way to give Londoners a reason to say hello.</p><p class="jumper-description">Official Friend is an AI-powered creative agency based in Kensington and Chelsea. We build websites, booking systems and campaigns for London’s independent businesses, creatives and community organisations.</p><p style="margin:0;color:#F2C14E;font-weight:700">Brought to you by the power of friendship.</p><div class="actions"><a class="action" style="background:#f2c14e;border-color:#f2c14e;text-decoration:none" data-referral-link href="store.html">See the jackets</a><a class="action" style="color:#fff4dc;border-color:#fff4dc;text-decoration:none" href="contact.html">Start a project</a></div>
+  <div class="jacket-referrals">
+    <h3>How jacket referrals work</h3>
+    <p>When you buy through an ambassador’s referral link, the ambassador earns <strong>70%</strong> of the sale margin after costs. Official Friend keeps the remaining <strong>30%</strong>.</p>
+  </div>
+</div>
+  </details>
+</section>
+
+</main>
+<footer style="border-top:2px solid #D42E22;padding-top:24px;color:#D9E4DC;font-size:14px"><div class="footer-brand"><img class="section-lantern" src="lantern-logo.png" alt="" width="34" height="34" loading="lazy"><span>The Official Friend &copy; 2026</span></div></footer>
+</div>
+</div>
+<script>
+  function openLinkedCampaign() {
+    const fragment = location.hash.slice(1);
+    const linked = fragment && document.getElementById(fragment);
+    const campaign = linked && linked.closest('.campaign-disclosure');
+    if (campaign) {
+      campaign.open = true;
+      linked.scrollIntoView();
+    }
+  }
+
+  const referral = new URLSearchParams(location.search).get('ref');
+  if (referral) {
+    for (const link of document.querySelectorAll('[data-referral-link]')) {
+      const destination = new URL(link.href);
+      destination.searchParams.set('ref', referral);
+      link.href = destination.href;
+    }
+    const badge = document.getElementById('jacket-referral');
+    if (badge && referral === 'MGES-001') {
+      badge.hidden = false;
+      badge.closest('details').open = true;
+    }
+  }
+  openLinkedCampaign();
+  window.addEventListener('hashchange', openLinkedCampaign);
+</script>
+</body>
+</html>
