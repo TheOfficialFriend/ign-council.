@@ -78,6 +78,12 @@
   .shop-experiment summary { font-weight:750; color:#f3cf83; }
   .shop-experiment[open] summary { margin-bottom:.6rem; }
   .shop-header .site-menu summary:focus-visible { outline:3px solid #f2c14e; outline-offset:4px; }
+
+  .referral-feature { margin:1rem 0; padding:clamp(14px,3vw,22px); border:0; border-radius:10px; background:#193b30; color:#fff4dc; }
+  .referral-feature h3 { margin:0 0 .55rem; font-size:.95rem; }
+  .referral-feature .referral-promise { display:flex; flex-wrap:wrap; align-items:center; gap:.35rem .75rem; margin-bottom:.6rem; line-height:1.2; font-weight:700; }
+  .referral-promise strong { color:#f2c14e; font:600 clamp(2.4rem,6vw,3.7rem)/1 Georgia,serif; }
+  .referral-feature p:last-child { font-size:.9rem; color:#e3ece3; }
 </style></head>
 <body>
 <header class="shop-header">
@@ -114,15 +120,16 @@
   <div class="jacket-intro">
     <h2>Marketing Genius or Evil Scientist? <span>Track Jacket</span></h2>
   </div>
+  <div class="jacket-referrals referral-feature" aria-labelledby="jacket-referral-heading">
+    <h3 id="jacket-referral-heading">How jacket referrals work</h3>
+    <p class="referral-promise"><strong>70%</strong> <span>of the sale margin<br>goes to the ambassador</span></p>
+    <p>Buy through an ambassador’s referral link and they earn 70% of the sale margin after costs. Official Friend keeps the remaining 30%.</p>
+  </div>
   <div class="jacket-specs">
     <p><strong>Sizes</strong> XS–2XL</p>
     <p><strong>Made to order</strong> Estimated UK delivery is 8–16 days from the date you order.</p>
   </div>
   <section><p id="credit">Referred by The Official Friend</p><div id="live"><p>Secure checkout is available for UK orders.</p></div><h2 id="title">Order your jacket</h2><div id="flow"></div><noscript>Enable JavaScript to continue to secure checkout.</noscript></section>
-  <details class="jacket-care jacket-referrals">
-    <summary>How jacket referrals work</summary>
-    <p>When you buy through an ambassador’s referral link, the ambassador earns <strong>70%</strong> of the sale margin after costs. Official Friend keeps the remaining <strong>30%</strong>.</p>
-  </details>
   <details class="jacket-care">
     <summary>Jacket details and care</summary>
   <p class="jacket-description">A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p>
