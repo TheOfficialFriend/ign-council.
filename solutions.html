@@ -32,9 +32,13 @@
     .service-poster { min-height:290px; padding:clamp(20px,4vw,40px); display:grid; align-items:center; background:linear-gradient(145deg,transparent 70%,#182d28 70% 73%,transparent 73%),#eac063; color:#102a22; font:600 clamp(2.9rem,7vw,6rem)/.92 Newsreader,Georgia,serif; }
     article:nth-child(3n+2) .service-poster { background-color:#df8d68; }
     article:nth-child(3n) .service-poster { background-color:#b4c7a5; }
+    .slider-help { margin:0 0 .75rem; font-size:.925rem; }
+    .service-track { scrollbar-color:#eac063 #0f2a22; }
+    .service-poster:has(img) { min-height:0; padding:12px; background:#0f2a22; }
+    .service-poster img { display:block; margin-inline:auto; max-width:100%; width:auto; height:auto; max-height:min(65svh, 580px); object-fit:contain; }
     .service-copy { padding:clamp(19px,4vw,44px); }
     .services h3 { margin:0; font:600 clamp(1.65rem,4vw,2.5rem)/1.1 Newsreader,Georgia,serif; }
-    .slider-controls:not([hidden]) { display:flex; align-items:center; justify-content:space-between; gap:.65rem; margin-top:1rem; }
+    .slider-controls:not([hidden]) { display:flex; align-items:center; justify-content:space-between; gap:.65rem; margin-bottom:.8rem; }
     .slider-controls button { min-height:44px; padding:.45rem .7rem; border:1px solid #93ad9d; border-radius:8px; background:#0f2a22; color:#fff4dc; font:inherit; cursor:pointer; }
     .slider-controls button:disabled { opacity:.5; cursor:default; }
     @media(max-width:620px) { .service-track article { grid-template-columns:1fr; align-content:start; }.service-poster { min-height:180px; } }
@@ -51,7 +55,13 @@
     <p class="intro"><strong>Hired muscle for your marketing.</strong> Get CMO-level strategy and hands-on help with websites, SEO and campaigns, without the cost of a full-time hire.</p>
     <section class="services" aria-labelledby="services-title">
       <h2 class="services-title" id="services-title"><img src="lantern-logo.png" alt="" width="44" height="44">Explore our services</h2>
-      <div class="service-track" tabindex="0" role="region" aria-label="Solutions carousel">
+      <p class="slider-help" id="slider-help">Swipe or use Previous and Next to browse the eight solutions.</p>
+      <div class="slider-controls" hidden>
+        <button type="button" data-step="-1">‹ Previous</button>
+        <span class="slide-count" aria-live="polite"></span>
+        <button type="button" data-step="1">Next ›</button>
+      </div>
+      <div class="service-track" aria-describedby="slider-help" tabindex="0" role="region" aria-label="Solutions carousel">
         <article><div class="service-poster" aria-hidden="true">Build a website</div><div class="service-copy"><h3>Website creation</h3><p>Plan, write, design and build websites and campaign landing pages that make your offer clear and give visitors a simple way to enquire, book or buy.</p></div></article>
         <article><div class="service-poster" aria-hidden="true">Organise bookings</div><div class="service-copy"><h3>Booking, catalogues &amp; CRM</h3><p>Organise enquiries, customer records, appointments and service catalogues with practical workflows you can manage independently.</p></div></article>
         <article><div class="service-poster" aria-hidden="true">Learn your tools</div><div class="service-copy"><h3>Training &amp; handover</h3><p>Learn to update your website, manage bookings and operate the digital tools built for your business.</p></div></article>
@@ -61,11 +71,7 @@
         <article><div class="service-poster" aria-hidden="true">Launch a campaign</div><div class="service-copy"><h3>Campaigns and content</h3><p>Plan launches and ongoing campaigns, develop creative concepts, and produce copy and content for social, email and paid media.</p></div></article>
         <article><div class="service-poster" aria-hidden="true">See what works</div><div class="service-copy"><h3>Measurement and improvement</h3><p>Track where enquiries and sales come from, review what each channel contributes, and test changes to copy, offers and landing pages.</p></div></article>
       </div>
-      <div class="slider-controls" hidden>
-        <button type="button" data-step="-1">‹ Previous</button>
-        <span class="slide-count" aria-live="polite"></span>
-        <button type="button" data-step="1">Next ›</button>
-      </div>
+
     </section>
     <p>Need something beyond what’s listed? Tell us what you have in mind and we’ll come back with what we can offer.</p>
     <p style="margin-top:24px"><a href="contact.html" style="display:inline-block;background:#f2c14e;color:#0f2a22;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700">Tell us what you need</a></p>
@@ -93,11 +99,13 @@
     }
     buttons.forEach(button => button.addEventListener('click', () => move(Number(button.dataset.step))));
     track.addEventListener('keydown', event => {
+      if (event.target !== track) return;
       if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
       event.preventDefault();
       move(event.key === 'ArrowRight' ? 1 : -1);
     });
     track.addEventListener('scroll', updateControls, { passive: true });
+    window.addEventListener('resize', updateControls);
     controls.hidden = false;
     updateControls();
   </script>
