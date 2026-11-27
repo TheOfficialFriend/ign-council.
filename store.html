@@ -102,6 +102,7 @@
   .shop-header { flex-wrap:wrap; }
   .shop-header-actions { display:flex; align-items:center; gap:clamp(.65rem,2vw,1.25rem); margin-inline-start:auto; }
   .shop-header .shop-contact { color:#fff4dc; white-space:nowrap; text-decoration:underline; }
+  .buy-jacket { margin-top:1rem; }
 </style></head>
 <body>
 <header class="shop-header">
@@ -145,13 +146,17 @@
     <p class="referral-promise"><strong>70%</strong> <span>of the sale margin<br>goes to the ambassador</span></p>
     <p>Buy through an ambassador’s referral link and they earn 70% of the sale margin after costs. Official Friend keeps the remaining 30%.</p>
   </div>
+  <div id="flow" class="buy-jacket"></div>
+  <noscript>Enable JavaScript to continue to secure checkout.</noscript>
+  <details class="jacket-care">
+    <summary>Jacket and order details</summary>
   <div class="jacket-specs">
     <p><strong>Sizes</strong> XS–2XL</p>
     <p><strong>Made to order</strong> Estimated UK delivery is 8–16 days from the date you order.</p>
   </div>
-  <section><p id="credit">Referred by The Official Friend</p><div id="live"><p>Secure checkout is available for UK orders.</p></div><h2 id="title">Order your jacket</h2><div id="flow"></div><noscript>Enable JavaScript to continue to secure checkout.</noscript></section>
-  <details class="jacket-care">
-    <summary>Jacket details and care</summary>
+    <p id="credit">Referred by The Official Friend</p>
+    <p>Choose your jacket design and size and enter your UK delivery address on Stripe’s secure checkout page.</p>
+    <p><small>Real payment. Made to order.</small></p>
   <p class="jacket-description">A zip-front jacket with contrast raglan sleeves and a stand collar. Regular unisex fit in a heavyweight 380 gsm cotton blend.</p>
     <p>Main fabric is 61.9% cotton and 38.1% polyester. Contrast panels are polyester. Sizes XS–2XL. Machine wash gently at 30°C.</p>
   </details>
@@ -274,7 +279,6 @@ for (const swatch of swatches) {
   });
 }
 const flow=document.querySelector('#flow');
-const title=document.querySelector('#title');
 const credit=document.querySelector('#credit');
 const valid=code=>/^OFF-[a-f0-9-]{36}$/i.test(code);
 function openProjectPoll(returnFocus, afterOrder = false) {
@@ -325,8 +329,7 @@ function openProjectPoll(returnFocus, afterOrder = false) {
 function checkout(code){
   const referral = /^(?!OFTEST001$)[A-Za-z0-9_-]{1,100}$/i.test(code) ? code : '';
   credit.textContent=referral?'Referral code: '+referral:'Referred by The Official Friend';
-  title.textContent='Order your jacket';
-  flow.innerHTML='<p><strong>£37.00 GBP</strong></p><p>Choose your jacket design and size, and enter your UK delivery address on Stripe’s secure checkout page.</p><p><button type="button">Buy now — £37</button></p><small>Real payment. Made to order.</small>';
+  flow.innerHTML='<button type="button">Buy now — £37</button>';
   flow.querySelector('button').onclick=()=>{
     const url=new URL('https://buy.stripe.com/bJe8wP0nv7lE2W28952Ji03');
     if(referral)url.searchParams.set('client_reference_id',referral);
