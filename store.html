@@ -84,6 +84,21 @@
   .referral-feature .referral-promise { display:flex; flex-wrap:wrap; align-items:center; gap:.35rem .75rem; margin-bottom:.6rem; line-height:1.2; font-weight:700; }
   .referral-promise strong { color:#f2c14e; font:600 clamp(2.4rem,6vw,3.7rem)/1 Georgia,serif; }
   .referral-feature p:last-child { font-size:.9rem; color:#e3ece3; }
+
+  .shop-comic { margin-bottom:0; }
+  .comic-art { display:grid; place-content:center; gap:.55rem; aspect-ratio:1; padding:clamp(10px,3vw,28px); background:#e8c88e; color:#172721; }
+  .comic-checkout { background:#d8e5db; }
+  .comic-social { background:#d7e1ef; }
+  .comic-cloud { background:#204338; }
+  .comic-phone { display:grid; gap:.45rem; padding:.8rem; border:3px solid #172721; border-radius:15px; background:#fffaf0; box-shadow:4px 4px #172721; font-size:clamp(.7rem,1.6vw,.92rem); }
+  .comic-receipt-line { height:3px; background:#7a9387; }
+  .comic-receipt-line + .comic-receipt-line { width:68%; }
+  .comic-post-photo { display:block; aspect-ratio:2.4; background:#193b30 url("jacket-cream-navy.webp") center/contain no-repeat; border-radius:4px; }
+  .comic-bubble { display:block; padding:.4rem .6rem; border:2px solid #172721; border-radius:.8rem .8rem .8rem .15rem; background:#fffaf0; font-size:clamp(.7rem,1.6vw,.95rem); font-weight:750; box-shadow:3px 3px #0f2a22; }
+  .comic-cloud .comic-bubble:nth-child(2) { justify-self:end; background:#f3cf83; }
+  .comic-split { display:grid; grid-template-columns:auto 1fr; column-gap:.45rem; align-items:center; font-size:clamp(.7rem,1.6vw,.95rem); }
+  .comic-split strong { font:700 clamp(1.25rem,3vw,2.2rem)/1.1 Georgia,serif; }
+  @media(max-width:690px) { .comic-art { max-width:320px; margin:auto; } }
 </style></head>
 <body>
 <header class="shop-header">
@@ -170,6 +185,50 @@
   </ol>
   <p><small>The QR code shown is a mockup. Where it leads can vary.</small></p>
   <div class="campaign-footer"><em>Brought to you by the power of friendship.</em><a href="#jacket-details">See the jacket</a></div>
+</details>
+<details class="campaign shop-experiment" id="referral-comic">
+  <summary>Comic: How an ambassador gets paid</summary>
+  <ol class="campaign-steps shop-comic">
+    <li>
+      <div class="campaign-panel"><img src="experiment-001-cafe-bar-storyboard.png" width="2172" height="724" loading="lazy" alt="The ambassador shows the QR artwork on the jacket." style="--offset:-100%"></div>
+      <div class="campaign-caption"><h3>1. Share the link</h3><p>A customer asks about the jacket. The ambassador shares their personal referral link.</p></div>
+    </li>
+    <li>
+      <div class="comic-art comic-checkout" aria-hidden="true">
+        <span class="comic-phone"><b>Track jacket</b><span class="comic-receipt-line"></span><span class="comic-receipt-line"></span><strong>Order placed ✓</strong></span>
+      </div>
+      <div class="campaign-caption"><h3>2. The customer buys</h3><p>The customer orders through the link. The referral code travels with the purchase at checkout.</p></div>
+    </li>
+    <li>
+      <div class="comic-art comic-share" aria-hidden="true">
+        <span class="comic-bubble">Sale margin<br>after costs</span><span class="comic-split"><strong>70%</strong><span>Ambassador</span><strong>30%</strong><span>Official Friend</span></span>
+      </div>
+      <div class="campaign-caption"><h3>3. The ambassador earns a share</h3><p>On that referral sale, the ambassador earns 70% of the sale margin after costs. Official Friend keeps 30%.</p></div>
+    </li>
+  </ol>
+</details>
+<details class="campaign shop-experiment" id="word-of-mouth-comic">
+  <summary>Comic: How word spreads</summary>
+  <ol class="campaign-steps shop-comic">
+    <li>
+      <div class="campaign-panel"><img src="experiment-001-cafe-bar-storyboard.png" width="2172" height="724" loading="lazy" alt="Two people laugh together after talking about the jacket." style="--offset:-200%"></div>
+      <div class="campaign-caption"><h3>1. A jacket starts a conversation</h3><p>Someone asks about the jacket in a café. The two start talking and make a connection.</p></div>
+    </li>
+    <li>
+      <div class="comic-art comic-social" aria-hidden="true">
+        <span class="comic-phone"><b>From the café</b><span class="comic-post-photo"></span><strong>Met someone new thanks to this jacket.</strong><span>@Official Friend</span></span>
+      </div>
+      <div class="campaign-caption"><h3>2. Someone shares the story</h3><p>A photo or short video gives friends a glimpse of the jacket and the conversation behind it.</p></div>
+    </li>
+    <li>
+      <div class="comic-art comic-cloud" aria-hidden="true">
+        <span class="comic-bubble">Where’s that jacket from?</span>
+        <span class="comic-bubble">Official Friend</span>
+        <span class="comic-bubble">Have you seen their other projects?</span>
+      </div>
+      <div class="campaign-caption"><h3>3. More people hear about Official Friend</h3><p>Comments, tags and shares can carry the story into new circles and introduce people to the agency and its campaigns.</p></div>
+    </li>
+  </ol>
 </details>
 </main>
 <template id="project-poll">
