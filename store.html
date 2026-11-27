@@ -103,6 +103,11 @@
   .shop-header-actions { display:flex; align-items:center; gap:clamp(.65rem,2vw,1.25rem); margin-inline-start:auto; }
   .shop-header .shop-contact { color:#fff4dc; white-space:nowrap; text-decoration:underline; }
   .buy-jacket { margin-top:1rem; }
+  .jacket-comic-preview { display:grid; grid-template-columns:clamp(72px,22%,100px) minmax(0,1fr); gap:.75rem; align-items:center; margin-top:1rem; padding-top:.9rem; border-top:1px solid #c7b591; text-decoration:none; }
+  .jacket-comic-preview > span:last-child { display:grid; gap:.2rem; }
+  .jacket-comic-preview .campaign-panel { width:100%; border-radius:6px; }
+  .jacket-comic-preview strong { text-decoration:underline; text-underline-offset:.18em; }
+  .jacket-comic-preview > span > span { color:#40554b; font-size:.85rem; }
 </style></head>
 <body>
 <header class="shop-header">
@@ -136,6 +141,10 @@
     <button type="button" data-colour="cream-navy" aria-label="The Genius, Cream and Navy" aria-pressed="true" style="--swatch:#f6f1e4"></button>
     <button type="button" data-colour="red-cream" aria-label="The Scientist, Red and Cream" aria-pressed="false" style="--swatch:#79192a"></button>
   </div>
+  <a class="jacket-comic-preview" href="#experiment-001">
+    <span class="campaign-panel"><img src="experiment-001-cafe-bar-storyboard.png" width="2172" height="724" alt="" style="--offset:-100%"></span>
+    <span><strong>How to use your jacket</strong><span>See how a scan can start a conversation.</span></span>
+  </a>
 </figure>
 <article id="jacket-details">
   <div class="jacket-intro">
@@ -344,4 +353,9 @@ if (pollUrl.searchParams.get('poll') === 'london') {
   history.replaceState(history.state, '', pollUrl);
   openProjectPoll(flow.querySelector('button'));
 }
+</script>
+<script>
+  document.querySelector('.jacket-comic-preview').addEventListener('click', () => {
+    document.getElementById('experiment-001').open = true;
+  });
 </script></body></html>
