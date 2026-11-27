@@ -69,7 +69,6 @@
 
   .shop-main { gap:clamp(16px,3vw,30px); }
   .shop-intro h1 { font-size:clamp(2.65rem,6vw,4.6rem); }
-  .shop-header .site-menu a { font-weight:650; }
   .jacket-intro h2 { font-size:clamp(1.65rem,3.5vw,2.65rem); }
   .jacket-care { margin-top:.65rem; padding:.05rem .75rem; border:1px solid #ded4bf; border-radius:8px; }
   .jacket-care summary,.shop-experiment summary { align-content:center; min-height:44px; cursor:pointer; }
@@ -108,7 +107,20 @@
   .jacket-comic-preview .campaign-panel { width:100%; border-radius:6px; }
   .jacket-comic-preview strong { text-decoration:underline; text-underline-offset:.18em; }
   .jacket-comic-preview > span > span { color:#40554b; font-size:.85rem; }
-</style></head>
+
+  .jacket-comic-preview {
+    grid-template-columns:clamp(70px,28%,115px) minmax(0,1fr);
+    gap:clamp(.55rem,2vw,1rem); padding:.6rem; border:0; border-radius:8px;
+    background:#193b30; color:#fff4dc;
+  }
+  .jacket-comic-preview strong {
+    font:850 clamp(1.05rem,2.9vw,1.85rem)/.95 system-ui,sans-serif;
+    text-transform:uppercase; letter-spacing:-.04em; text-decoration:none; text-wrap:balance;
+  }
+  .jacket-comic-preview > span > span { color:#f2c14e; font-size:.8rem; }
+  .jacket-comic-preview:hover strong { text-decoration:underline; text-underline-offset:.16em; }
+</style><link rel="stylesheet" href="official-friend-menu.css">
+</head>
 <body>
 <header class="shop-header">
   <a class="shop-brand" href="/"><img src="lantern-logo.png" width="46" height="46" alt="">THE OFFICIAL FRIEND</a>
@@ -137,7 +149,7 @@
 <figure class="jacket-gallery">
   <a class="jacket-comic-preview" href="#experiment-001">
     <span class="campaign-panel"><img src="experiment-001-cafe-bar-storyboard.png" width="2172" height="724" alt="" style="--offset:-100%"></span>
-    <span><strong>How to use your jacket</strong><span>See how a scan can start a conversation.</span></span>
+    <span><strong>How to use your jacket</strong><span>Turn, scan and start a conversation.</span></span>
   </a>
   <img id="jacket-image" src="jacket-cream-navy.webp" width="1400" height="1400" alt="Cream and navy track jacket with Marketing Genius and Evil Scientist lettering">
   <p id="jacket-colour" class="jacket-caption">The Genius · Cream &amp; Navy</p>
