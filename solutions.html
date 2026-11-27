@@ -29,19 +29,16 @@
     .service-track { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; border:1px solid #537668; border-radius:14px; }
     .service-track:focus-visible,.slider-controls button:focus-visible { outline:3px solid #f2c14e; outline-offset:4px; }
     .service-track article { flex:0 0 100%; min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; scroll-snap-align:start; }
-    .service-poster { min-height:290px; padding:clamp(20px,4vw,40px); display:grid; align-items:center; background:linear-gradient(145deg,transparent 70%,#182d28 70% 73%,transparent 73%),#eac063; color:#102a22; font:600 clamp(2.9rem,7vw,6rem)/.92 Newsreader,Georgia,serif; }
-    article:nth-child(3n+2) .service-poster { background-color:#df8d68; }
-    article:nth-child(3n) .service-poster { background-color:#b4c7a5; }
     .slider-help { margin:0 0 .75rem; font-size:.925rem; }
     .service-track { scrollbar-color:#eac063 #0f2a22; }
-    .service-poster:has(img) { min-height:0; padding:12px; background:#0f2a22; }
-    .service-poster img { display:block; margin-inline:auto; max-width:100%; width:auto; height:auto; max-height:min(65svh, 580px); object-fit:contain; }
+    .service-poster { padding:12px; background:#0f2a22; }
+    .service-poster img { display:block; margin-inline:auto; width:min(100%, 65svh, 580px); height:auto; object-fit:contain; }
     .service-copy { padding:clamp(19px,4vw,44px); }
     .services h3 { margin:0; font:600 clamp(1.65rem,4vw,2.5rem)/1.1 Newsreader,Georgia,serif; }
     .slider-controls:not([hidden]) { display:flex; align-items:center; justify-content:space-between; gap:.65rem; margin-bottom:.8rem; }
     .slider-controls button { min-height:44px; padding:.45rem .7rem; border:1px solid #93ad9d; border-radius:8px; background:#0f2a22; color:#fff4dc; font:inherit; cursor:pointer; }
     .slider-controls button:disabled { opacity:.5; cursor:default; }
-    @media(max-width:620px) { .service-track article { grid-template-columns:1fr; align-content:start; }.service-poster { min-height:180px; } }
+    @media(max-width:620px) { .service-track article { grid-template-columns:1fr; align-content:start; } }
     footer { border-top: 2px solid #d42e22; padding-block: 20px 32px; color: #f2c14e; font-weight: 600; }
   </style>
 </head>
@@ -62,14 +59,14 @@
         <button type="button" data-step="1">Next ›</button>
       </div>
       <div class="service-track" aria-describedby="slider-help" tabindex="0" role="region" aria-label="Solutions carousel">
-        <article><div class="service-poster" aria-hidden="true">Build a website</div><div class="service-copy"><h3>Website creation</h3><p>Plan, write, design and build websites and campaign landing pages that make your offer clear and give visitors a simple way to enquire, book or buy.</p></div></article>
-        <article><div class="service-poster" aria-hidden="true">Organise bookings</div><div class="service-copy"><h3>Booking, catalogues &amp; CRM</h3><p>Organise enquiries, customer records, appointments and service catalogues with practical workflows you can manage independently.</p></div></article>
-        <article><div class="service-poster" aria-hidden="true">Learn your tools</div><div class="service-copy"><h3>Training &amp; handover</h3><p>Learn to update your website, manage bookings and operate the digital tools built for your business.</p></div></article>
-        <article><div class="service-poster" aria-hidden="true">Get found locally</div><div class="service-copy"><h3>SEO and local search</h3><p>Find what customers search for, improve your site structure and page copy, and strengthen your local search presence so people can find you.</p></div></article>
-        <article><div class="service-poster" aria-hidden="true">Plan your marketing</div><div class="service-copy"><h3>Marketing strategy and CMO support</h3><p>Set goals, identify your audience, prioritise channels and budget, and turn those decisions into a marketing roadmap your team can use.</p></div></article>
-        <article><div class="service-poster" aria-hidden="true">Define your brand</div><div class="service-copy"><h3>Brand and positioning</h3><p>Define who you serve, what makes your offer different, and how to explain it consistently across your website, campaigns and sales materials.</p></div></article>
-        <article><div class="service-poster" aria-hidden="true">Launch a campaign</div><div class="service-copy"><h3>Campaigns and content</h3><p>Plan launches and ongoing campaigns, develop creative concepts, and produce copy and content for social, email and paid media.</p></div></article>
-        <article><div class="service-poster" aria-hidden="true">See what works</div><div class="service-copy"><h3>Measurement and improvement</h3><p>Track where enquiries and sales come from, review what each channel contributes, and test changes to copy, offers and landing pages.</p></div></article>
+        <article><div class="service-poster"><img src="assets/solutions/website-creation.webp" width="1536" height="1536" alt="" decoding="async"></div><div class="service-copy"><h3>Website creation</h3><p>Plan, write, design and build websites and campaign landing pages that make your offer clear and give visitors a simple way to enquire, book or buy.</p></div></article>
+        <article><div class="service-poster"><img src="assets/solutions/booking-catalogues-crm.webp" width="1536" height="1536" alt="" decoding="async" loading="lazy"></div><div class="service-copy"><h3>Booking, catalogues &amp; CRM</h3><p>Organise enquiries, customer records, appointments and service catalogues with practical workflows you can manage independently.</p></div></article>
+        <article><div class="service-poster"><img src="assets/solutions/training-handover.webp" width="1536" height="1536" alt="" decoding="async" loading="lazy"></div><div class="service-copy"><h3>Training &amp; handover</h3><p>Learn to update your website, manage bookings and operate the digital tools built for your business.</p></div></article>
+        <article><div class="service-poster"><img src="assets/solutions/seo-local-search.webp" width="1536" height="1536" alt="" decoding="async" loading="lazy"></div><div class="service-copy"><h3>SEO and local search</h3><p>Find what customers search for, improve your site structure and page copy, and strengthen your local search presence so people can find you.</p></div></article>
+        <article><div class="service-poster"><img src="assets/solutions/marketing-strategy.webp" width="1536" height="1536" alt="" decoding="async" loading="lazy"></div><div class="service-copy"><h3>Marketing strategy and CMO support</h3><p>Set goals, identify your audience, prioritise channels and budget, and turn those decisions into a marketing roadmap your team can use.</p></div></article>
+        <article><div class="service-poster"><img src="assets/solutions/brand-positioning.webp" width="1536" height="1536" alt="" decoding="async" loading="lazy"></div><div class="service-copy"><h3>Brand and positioning</h3><p>Define who you serve, what makes your offer different, and how to explain it consistently across your website, campaigns and sales materials.</p></div></article>
+        <article><div class="service-poster"><img src="assets/solutions/campaigns-content.webp" width="1536" height="1536" alt="" decoding="async" loading="lazy"></div><div class="service-copy"><h3>Campaigns and content</h3><p>Plan launches and ongoing campaigns, develop creative concepts, and produce copy and content for social, email and paid media.</p></div></article>
+        <article><div class="service-poster"><img src="assets/solutions/measurement-improvement.webp" width="1536" height="1536" alt="" decoding="async" loading="lazy"></div><div class="service-copy"><h3>Measurement and improvement</h3><p>Track where enquiries and sales come from, review what each channel contributes, and test changes to copy, offers and landing pages.</p></div></article>
       </div>
 
     </section>
