@@ -26,12 +26,18 @@
     .services { margin-block: 32px; padding: clamp(18px, 4vw, 36px); border: 1px solid #31564b; border-radius: 18px; background: #16382e; }
     .services-title { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
     .services-title img { width: 44px; height: 44px; object-fit: contain; border-radius: 50%; }
-    .service-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid #537668; }
-    .service-tabs button { min-height: 44px; padding: 8px 12px; border: 1px solid #769688; border-radius: 8px; background: transparent; color: #fff4dc; font: inherit; font-weight: 600; cursor: pointer; }
-    .service-tabs button[aria-selected="true"] { background: #f2c14e; border-color: #f2c14e; color: #0f2a22; }
-    .service-tabs button:focus-visible, .services article:focus-visible { outline: 3px solid #f2c14e; outline-offset: 4px; }
-    .services article { padding-block: 22px 6px; max-width: 66ch; }
-    .services h3 { margin: 0; font: 600 1.65rem/1.15 Newsreader, Georgia, serif; }
+    .service-track { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; border:1px solid #537668; border-radius:14px; }
+    .service-track:focus-visible,.slider-controls button:focus-visible { outline:3px solid #f2c14e; outline-offset:4px; }
+    .service-track article { flex:0 0 100%; min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; scroll-snap-align:start; }
+    .service-poster { min-height:290px; padding:clamp(20px,4vw,40px); display:grid; align-items:center; background:linear-gradient(145deg,transparent 70%,#182d28 70% 73%,transparent 73%),#eac063; color:#102a22; font:600 clamp(2.9rem,7vw,6rem)/.92 Newsreader,Georgia,serif; }
+    article:nth-child(3n+2) .service-poster { background-color:#df8d68; }
+    article:nth-child(3n) .service-poster { background-color:#b4c7a5; }
+    .service-copy { padding:clamp(19px,4vw,44px); }
+    .services h3 { margin:0; font:600 clamp(1.65rem,4vw,2.5rem)/1.1 Newsreader,Georgia,serif; }
+    .slider-controls:not([hidden]) { display:flex; align-items:center; justify-content:space-between; gap:.65rem; margin-top:1rem; }
+    .slider-controls button { min-height:44px; padding:.45rem .7rem; border:1px solid #93ad9d; border-radius:8px; background:#0f2a22; color:#fff4dc; font:inherit; cursor:pointer; }
+    .slider-controls button:disabled { opacity:.5; cursor:default; }
+    @media(max-width:620px) { .service-track article { grid-template-columns:1fr; align-content:start; }.service-poster { min-height:180px; } }
     footer { border-top: 2px solid #d42e22; padding-block: 20px 32px; color: #f2c14e; font-weight: 600; }
   </style>
 </head>
@@ -45,70 +51,55 @@
     <p class="intro"><strong>Hired muscle for your marketing.</strong> Get CMO-level strategy and hands-on help with websites, SEO and campaigns, without the cost of a full-time hire.</p>
     <section class="services" aria-labelledby="services-title">
       <h2 class="services-title" id="services-title"><img src="lantern-logo.png" alt="" width="44" height="44">Explore our services</h2>
-      <article><h3>Website creation</h3><p>Plan, write, design and build websites and campaign landing pages that make your offer clear and give visitors a simple way to enquire, book or buy.</p></article>
-      <article><h3>Booking, catalogues &amp; CRM</h3><p>Organise enquiries, customer records, appointments and service catalogues with practical workflows you can manage independently.</p></article>
-      <article><h3>Training &amp; handover</h3><p>Learn to update your website, manage bookings and operate the digital tools built for your business.</p></article>
-      <article><h3>SEO and local search</h3><p>Find what customers search for, improve your site structure and page copy, and strengthen your local search presence so people can find you.</p></article>
-      <article><h3>Marketing strategy and CMO support</h3><p>Set goals, identify your audience, prioritise channels and budget, and turn those decisions into a marketing roadmap your team can use.</p></article>
-      <article><h3>Brand and positioning</h3><p>Define who you serve, what makes your offer different, and how to explain it consistently across your website, campaigns and sales materials.</p></article>
-      <article><h3>Campaigns and content</h3><p>Plan launches and ongoing campaigns, develop creative concepts, and produce copy and content for social, email and paid media.</p></article>
-      <article><h3>Measurement and improvement</h3><p>Track where enquiries and sales come from, review what each channel contributes, and test changes to copy, offers and landing pages.</p></article>
+      <div class="service-track" tabindex="0" role="region" aria-label="Solutions carousel">
+        <article><div class="service-poster" aria-hidden="true">Build a website</div><div class="service-copy"><h3>Website creation</h3><p>Plan, write, design and build websites and campaign landing pages that make your offer clear and give visitors a simple way to enquire, book or buy.</p></div></article>
+        <article><div class="service-poster" aria-hidden="true">Organise bookings</div><div class="service-copy"><h3>Booking, catalogues &amp; CRM</h3><p>Organise enquiries, customer records, appointments and service catalogues with practical workflows you can manage independently.</p></div></article>
+        <article><div class="service-poster" aria-hidden="true">Learn your tools</div><div class="service-copy"><h3>Training &amp; handover</h3><p>Learn to update your website, manage bookings and operate the digital tools built for your business.</p></div></article>
+        <article><div class="service-poster" aria-hidden="true">Get found locally</div><div class="service-copy"><h3>SEO and local search</h3><p>Find what customers search for, improve your site structure and page copy, and strengthen your local search presence so people can find you.</p></div></article>
+        <article><div class="service-poster" aria-hidden="true">Plan your marketing</div><div class="service-copy"><h3>Marketing strategy and CMO support</h3><p>Set goals, identify your audience, prioritise channels and budget, and turn those decisions into a marketing roadmap your team can use.</p></div></article>
+        <article><div class="service-poster" aria-hidden="true">Define your brand</div><div class="service-copy"><h3>Brand and positioning</h3><p>Define who you serve, what makes your offer different, and how to explain it consistently across your website, campaigns and sales materials.</p></div></article>
+        <article><div class="service-poster" aria-hidden="true">Launch a campaign</div><div class="service-copy"><h3>Campaigns and content</h3><p>Plan launches and ongoing campaigns, develop creative concepts, and produce copy and content for social, email and paid media.</p></div></article>
+        <article><div class="service-poster" aria-hidden="true">See what works</div><div class="service-copy"><h3>Measurement and improvement</h3><p>Track where enquiries and sales come from, review what each channel contributes, and test changes to copy, offers and landing pages.</p></div></article>
+      </div>
+      <div class="slider-controls" hidden>
+        <button type="button" data-step="-1">‹ Previous</button>
+        <span class="slide-count" aria-live="polite"></span>
+        <button type="button" data-step="1">Next ›</button>
+      </div>
     </section>
     <p>Need something beyond what’s listed? Tell us what you have in mind and we’ll come back with what we can offer.</p>
     <p style="margin-top:24px"><a href="contact.html" style="display:inline-block;background:#f2c14e;color:#0f2a22;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700">Tell us what you need</a></p>
   </main>
   <footer class="wrap">Brought to you by the power of friendship.</footer>
   <script>
-    const services = document.querySelector('.services');
-    const panels = Array.from(services.querySelectorAll('article'));
-    const tabList = document.createElement('div');
-    tabList.className = 'service-tabs';
-    tabList.setAttribute('role', 'tablist');
-    tabList.setAttribute('aria-labelledby', 'services-title');
-
-    const tabs = panels.map((panel, index) => {
-      const tab = document.createElement('button');
-      tab.type = 'button';
-      tab.id = 'service-tab-' + index;
-      tab.textContent = panel.querySelector('h3').textContent;
-      tab.setAttribute('role', 'tab');
-      panel.id = 'service-panel-' + index;
-      panel.tabIndex = 0;
-      panel.setAttribute('role', 'tabpanel');
-      panel.setAttribute('aria-labelledby', tab.id);
-      tab.setAttribute('aria-controls', panel.id);
-      tab.addEventListener('click', () => selectService(index));
-      tabList.append(tab);
-      return tab;
-    });
-
-    function selectService(index) {
-      tabs.forEach((tab, position) => {
-        const selected = index === position;
-        tab.setAttribute('aria-selected', String(selected));
-        tab.tabIndex = selected ? 0 : -1;
-        panels[position].hidden = !selected;
+    const track = document.querySelector('.service-track');
+    const controls = document.querySelector('.slider-controls');
+    const slides = [...track.children];
+    const status = controls.querySelector('.slide-count');
+    const buttons = [...controls.querySelectorAll('button')];
+    const activeIndex = () => Math.round(track.scrollLeft / track.clientWidth);
+    function updateControls() {
+      const index = activeIndex();
+      status.textContent = (index + 1) + ' / ' + slides.length;
+      buttons[0].disabled = index === 0;
+      buttons[1].disabled = index === slides.length - 1;
+    }
+    function move(step) {
+      const next = Math.max(0, Math.min(slides.length - 1, activeIndex() + step));
+      track.scrollTo({
+        left: next * track.clientWidth,
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
       });
     }
-
-    tabList.addEventListener('keydown', event => {
-      const current = tabs.indexOf(event.target);
-      if (current < 0) return;
-      let next;
-      switch (event.key) {
-        case 'ArrowRight': next = (current + 1) % tabs.length; break;
-        case 'ArrowLeft': next = (current + tabs.length - 1) % tabs.length; break;
-        case 'Home': next = 0; break;
-        case 'End': next = tabs.length - 1; break;
-        default: return;
-      }
+    buttons.forEach(button => button.addEventListener('click', () => move(Number(button.dataset.step))));
+    track.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
       event.preventDefault();
-      selectService(next);
-      tabs[next].focus();
+      move(event.key === 'ArrowRight' ? 1 : -1);
     });
-
-    selectService(0);
-    services.insertBefore(tabList, panels[0]);
+    track.addEventListener('scroll', updateControls, { passive: true });
+    controls.hidden = false;
+    updateControls();
   </script>
 </body>
 </html>
