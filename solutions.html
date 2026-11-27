@@ -41,11 +41,22 @@
     @media(max-width:620px) { .service-track article { grid-template-columns:1fr; align-content:start; } }
     footer { border-top: 2px solid #d42e22; padding-block: 20px 32px; color: #f2c14e; font-weight: 600; }
   </style>
+<link rel="stylesheet" href="official-friend-menu.css">
 </head>
 <body>
   <header><div class="wrap">
-    <a class="brand" href="index.html"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a>
-    <span style="display:flex;gap:16px"><a href="index.html">Home</a><a href="contact.html">Contact</a></span>
+    <a class="brand" href="/"><img src="lantern-logo.png" alt="">OFFICIAL FRIEND</a>
+    <details class="site-menu">
+    <summary>Menu <span aria-hidden="true"></span></summary>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="campaigns.html">Campaigns</a>
+      <a href="store.html">Store</a>
+      <a href="people.html">People</a>
+      <a href="solutions.html" aria-current="page">Solutions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </details>
   </div></header>
   <main class="wrap">
     <h1>Solutions</h1>
