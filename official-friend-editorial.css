@@ -170,3 +170,33 @@ a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #
   .landing-links a { padding-inline:0; }
   .landing-links a + a { border-left:0; border-top:1px solid #537668; }
 }
+
+/* Phone layout and touch targets */
+@media (max-width:740px) {
+  body > div > div {
+    padding-inline:clamp(16px,4vw,24px) !important;
+    padding-bottom:36px !important;
+  }
+  .header-link {
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+  }
+  #jumper { grid-template-columns:minmax(0,1fr); }
+  #jumper .campaign-copy { grid-row:auto; }
+  .campaign-copy .actions,.research .actions { display:grid; }
+  .campaign-copy .action,.research .action { padding-block:.65rem; }
+  .london-deck-controls button,.london-deck summary { min-height:44px; }
+  .london-deck summary { align-content:center; }
+  .community-links a { display:inline-flex; align-items:center; min-height:44px; }
+}
+@media (max-width:620px) {
+  .landing { min-height:0; padding:clamp(2rem,9vw,4rem) 0 1rem; }
+  .landing h1 {
+    font-size:clamp(2.55rem,10vw,4.25rem);
+    text-wrap:balance;
+  }
+  .landing-links a { min-height:58px; }
+  .page-title,.research h2,.blue-book h3 { overflow-wrap:anywhere; }
+  .research,.london-deck-body,#jumper { padding:16px; }
+}
